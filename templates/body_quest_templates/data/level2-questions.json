@@ -1,0 +1,92 @@
+{
+  "blood": {
+    "challengePrompts": [
+      "Which specialized body fluid has its oxygen transport capacity directly measured during a standard clinical hemoglobin test?",
+      "Which vital fluid is cellularly impaired in a condition characterized by an abnormally low red cell count or systemic iron deficiency?",
+      "Which circulatory medium experiences a functional decline when iron depletion reduces hemoglobin, leading to visibly pale conjunctiva?",
+      "Which fluid experiences microcytic and hypochromic changes in its cellular components, lowering a patient's overall hematocrit?",
+      "Which complex fluid's plasma volume and red cell distribution dictate the total viscosity and flow dynamics of the circulatory system?"
+    ]
+  },
+  "eyes": {
+    "challengePrompts": [
+      "Which sensory organ is compromised when a lack of rhodopsin synthesis leads to poor vision in low-light environments?",
+      "Which external organ suffers from severe drying of the cornea and conjunctiva due to an advanced Vitamin A deficiency?",
+      "Which specialized organ experiences progressive visual damage when its posterior retina lacks the essential pigments needed for night vision?",
+      "Which sensory organ fails to adapt when its photoreceptive rod cells lack the biochemical resources to function correctly in the dark?",
+      "Which diagnostic organ is clinically evaluated when a patient complains of a distinct inability to see clearly immediately after sunset?"
+    ]
+  },
+  "bones": {
+    "challengePrompts": [
+      "Which rigid skeletal system fails to mineralize its extracellular matrix properly due to insufficient Vitamin D, leading to physical bowing?",
+      "Which hard structural elements bend under the body's daily weight when calcium absorption is inadequate to harden the tissue?",
+      "Which dense structural tissue's strength and mineralization are severely compromised by impaired calcium deposition during childhood development?",
+      "Which internal structural framework becomes soft, porous, and painful due to a systemic lack of calcification?",
+      "Which skeletal parts of the body fail to harden during development, causing physical deformities like knocked knees?"
+    ]
+  },
+  "lungs": {
+    "challengePrompts": [
+      "Which primary respiratory organ is compromised when a loss of alveolar surface area slows down the rate of gas exchange?",
+      "Which respiratory organ experiences narrow, tight bronchial passages and reduced vital capacity during acute airway obstructions?",
+      "Which respiratory organ's protective, ciliated epithelial lining is damaged, leading to persistent coughing and mucus buildup?",
+      "Which gas-exchanging organ loses its structural elastic recoil, causing abnormal air trapping and shallow chest expansion?",
+      "Which vital respiratory organ is clinically affected when the rate of carbon dioxide clearance from the pulmonary capillaries drops?"
+    ]
+  },
+  "stomach": {
+    "challengePrompts": [
+      "Which muscular digestive organ's mucosal lining becomes severely inflamed and irritated by an overproduction of hydrochloric acid?",
+      "Which upper digestive organ experiences painful acid reflux or severe heartburn when its lower esophageal sphincter fails?",
+      "Which J-shaped digestive organ is highly prone to painful ulcers when its protective gastric mucus barrier is eroded?",
+      "Which chemical digestive organ suffers from impaired protein breakdown when its highly acidic, pepsin-dependent environment is disrupted?",
+      "Which muscular organ experiences painful spasms and heavy churning while trying to mechanically break down massive, complex meals?"
+    ]
+  },
+  "brain": {
+    "challengePrompts": [
+      "Which central processing organ experiences reduced synaptic efficiency and poor memory recall when its neurons lack structural lipids?",
+      "Which master processing organ fails to maintain executive function, focus, and logical attention during prolonged mental exhaustion?",
+      "Which central nervous organ shows sluggish signal transmission when the protective myelin sheaths around its axons are disrupted?",
+      "Which master organ's cellular networks suffer from acute neurotransmitter depletion, disrupting cognitive processing and alertness?",
+      "Which central organ struggles to coordinate precise motor tasks and process complex sensory information during intense cognitive fatigue?"
+    ]
+  },
+  "skin": {
+    "challengePrompts": [
+      "Which outer protective barrier develops dry, scaly rashes when its epidermal lipid membrane is damaged by environmental stress?",
+      "Which cutaneous organ shows red, itchy patches and cracked surfaces when its protective epithelial seal is broken?",
+      "Which external tissue develops painful, photosensitive rashes and peeling when exposed to harsh sunlight without adequate melanin protection?",
+      "Which primary physical barrier becomes highly vulnerable to bacterial entry when its protective sweat and sebum defense layers dry up?",
+      "Which large external organ loses its structural elasticity and moisture-retaining capacity, leading to visible irritation and flaking?"
+    ]
+  },
+  "heart": {
+    "challengePrompts": [
+      "Which muscular circulatory organ undergoes irregular contractions or life-threatening arrhythmias when blood potassium levels fluctuate?",
+      "Which central muscular pump experiences severe wall strain and ventricular hypertrophy when forced to pump against high arterial blood pressure?",
+      "Which organ's specialized pacemaking node fails to maintain a steady, rhythmic pulse during acute electrolyte imbalances?",
+      "Which vital organ's coronary vessels undergo narrow structural changes, directly reducing the oxygen supply to its thick myocardium?",
+      "Which primary cardiovascular pump exhibits rapid, exhausting heart rates to maintain adequate systemic cardiac output?"
+    ]
+  },
+  "small_intestine": {
+    "challengePrompts": [
+      "Which specialized digestive organ experiences blunting of its microscopic villi, leading to severe macronutrient malnutrition?",
+      "Which specific digestive section completely fails to absorb essential amino acids and fatty acids due to severe mucosal lining damage?",
+      "Which gastrointestinal organ's impaired brush border enzymes lead to malabsorptive, watery diarrhea and rapid weight loss?",
+      "Which absorptive organ fails to execute the active transport of digested micronutrients when its epithelial enterocytes are damaged?",
+      "Which long digestive tube completely fails to absorb fat-soluble vitamins (A, D, E, K) despite adequate dietary intake?"
+    ]
+  },
+  "large_intestine": {
+    "challengePrompts": [
+      "Which terminal digestive organ extracts too much water from indigestible waste, leaving the stool hard, dry, and impacted?",
+      "Which lower digestive structure experiences painful colonic muscle spasms when its baseline peristalsis becomes slow and irregular?",
+      "Which gastrointestinal organ's gut microbiome is disrupted, leading to abnormal fermentation of dietary fiber and excessive flatulence?",
+      "Which lower digestive tube experiences heavy straining and difficult evacuation due to a chronic, low-bulk diet?",
+      "Which final organ fails to adequately lubricate and compact dietary residue, resulting in sluggish fecal transit times?"
+    ]
+  }
+}

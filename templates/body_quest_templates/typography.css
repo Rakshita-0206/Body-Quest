@@ -1,0 +1,650 @@
+/* ══════════════════════════════════════════════════════════════
+   BODY QUEST — Typography (Inter throughout)
+   Premium SaaS readability; does not change layout/colors/motion.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Base: Inter everywhere ── */
+*,
+*::before,
+*::after,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+}
+
+/* ── Main titles — Inter 700–800 ── */
+.game-logo,
+.header-logo,
+.level-select-logo,
+.level-select-title,
+.ps-title,
+#screen-patient.level-1-play .ps-title,
+#screen-game .ps-title,
+.level-badge-main,
+#screen-patient.level-1-play .level-play-badge .level-badge-main,
+.complete-title,
+.healed-title,
+.lb-title,
+.level-complete-title,
+.level-card-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+.game-logo,
+#screen-menu .game-logo {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.12;
+}
+
+.ps-title,
+#screen-patient.level-1-play .ps-title,
+#screen-game .ps-title {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.level-play-badge .level-badge-main,
+#screen-patient.level-1-play .level-play-badge .level-badge-main {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.complete-title,
+.healed-title,
+.lb-title,
+.level-complete-title {
+  letter-spacing: 0.03em;
+}
+
+/* ── Section headings — Inter 700 ── */
+.ps-organ-list-title,
+.panel-title,
+.level1-symptom-label,
+.level1-guidelines-title,
+.level1-challenge-title,
+.level1-attempts-label,
+.level-run-stats-title,
+.level-run-hero-label,
+.level-run-stat-label,
+.organs-cleared-row,
+.ps-sym-title,
+.rev-topics-title,
+.level-select-sub,
+.scoring-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* ── Card titles / buttons — Inter 600 ── */
+.ps-patient-name,
+.level-play-badge .level-badge-name,
+.level1-guidelines-toggle,
+.ps-organ-card--l1 .ps-organ-name,
+.level1-big-streak-label,
+.level1-big-score-label,
+.btn-primary,
+.btn-menu-nav,
+.btn-menu-secondary,
+.level1-next-btn,
+.menu-action-label,
+.menu-top-badge,
+.game-tagline,
+.menu-intro-text {
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.level-play-badge .level-badge-name,
+#screen-patient.level-1-play .level-play-badge .level-badge-name {
+  text-transform: none;
+  font-weight: 500;
+}
+
+/* ── Body text — Inter 400–500 ── */
+.level1-guidelines-list,
+.level1-answer-feedback,
+.ps-body-hint,
+.ps-hint-box,
+#symptom-list li,
+.question-text,
+.option-text,
+.gpc-name,
+.gpc-age,
+.organ-hover-card .ohc-section,
+.patient-label {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+
+/* ── Symptom clue — prominent Inter 600 ── */
+.level1-symptom-text,
+#screen-patient.level-1-play .level1-symptom-text {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--type-md);
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  word-break: normal;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+/* ── Small labels — Inter 500 ── */
+.body-hotspot .hotspot-label,
+.body-hotspot .hotspot-name,
+.level1-streak-badge,
+.score-badge,
+.run-badge,
+.ps-body-hint,
+.stat-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ── Organ labels on body map circles ── */
+.body-hotspot .hotspot-label,
+.body-hotspot .hotspot-name,
+#screen-patient.level-1-play .body-hotspot .hotspot-label,
+#screen-patient.level-1-play .body-hotspot .hotspot-name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  word-break: normal;
+  hyphens: none;
+  overflow-wrap: normal;
+  line-height: 1.2;
+}
+
+.body-hotspot .hotspot-name {
+  font-size: var(--type-2xs);
+  font-weight: 600;
+}
+
+#screen-patient.level-1-play .body-hotspot .hotspot-name {
+  font-size: var(--type-2xs);
+  font-weight: 600;
+  -webkit-line-clamp: 3;
+}
+
+#screen-patient.level-1-play .body-hotspot .hotspot-organ-icon {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1;
+  margin-bottom: 1px;
+}
+
+#screen-patient.level-1-play .body-hotspot .hotspot-label {
+  font-size: var(--type-3xs);
+}
+
+#screen-patient.level-1-play .ps-organ-card--l1 .ps-organ-name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--type-sm);
+  line-height: 1.35;
+  text-transform: none;
+  letter-spacing: 0;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 901px) {
+  #screen-patient.level-1-play:not(.level-1-mobile) .body-hotspot .hotspot-name {
+    font-size: var(--type-xs);
+    line-height: 1.18;
+    font-weight: 600;
+  }
+
+  #screen-patient.level-1-play:not(.level-1-mobile) .body-hotspot .hotspot-label {
+    font-size: var(--type-3xs);
+  }
+
+  #screen-patient.level-1-play:not(.level-1-mobile) .ps-organ-card--l1 .ps-organ-name {
+    font-size: var(--type-sm);
+  }
+
+  #screen-patient.level-1-play:not(.level-1-mobile) .level1-symptom-text {
+    font-size: var(--type-md);
+    line-height: 1.55;
+  }
+
+  #screen-patient.level-1-play:not(.level-1-mobile) .ps-body-hint,
+  #screen-patient.level-1-play:not(.level-1-mobile) .ps-body-hint-text {
+    font-size: var(--type-base);
+    font-weight: 500;
+    line-height: 1.45;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   GLOBAL UI — unified type scale (sizes only where listed)
+   ══════════════════════════════════════════════════════════════ */
+
+body {
+  font-size: var(--type-base);
+}
+
+/* ── Menu ── */
+.game-tagline { font-size: var(--type-sm); }
+.game-subtitle { font-size: var(--type-sm); }
+.name-input-wrap input,
+.btn-primary,
+.btn-menu-nav,
+.btn-menu-secondary { font-size: var(--type-base); }
+.btn-back-small,
+.footer-nav,
+.menu-stats-row .stat-label { font-size: var(--type-sm); }
+.menu-stats-row .stat-val { font-size: var(--type-lg); }
+.patient-label { font-size: var(--type-sm); }
+
+/* ── Header / top bar ── */
+.header-logo { font-size: var(--type-lg); }
+.ps-title,
+#screen-game .ps-title,
+#screen-patient.level-1-play .ps-title { font-size: var(--type-xl); }
+.score-badge,
+.run-badge,
+.level1-streak-badge { font-size: var(--type-sm); }
+.level1-streak-badge #level1-streak-count { font-size: var(--type-xl); }
+
+/* ── Level badge ── */
+.level-play-badge .level-badge-main,
+#screen-patient.level-1-play .level-play-badge .level-badge-main { font-size: var(--type-2xl); }
+.level-play-badge .level-badge-name,
+.level-badge-name { font-size: var(--type-base); }
+
+/* ── Section headings ── */
+.level-select-logo { font-size: clamp(0.65rem, 1.5vh, 0.72rem); }
+.level-select-title { font-size: clamp(0.95rem, 2.4vh, 1.35rem); }
+.level-select-sub { font-size: clamp(0.75rem, 1.75vh, 0.875rem); }
+.level-select-user { font-size: clamp(0.8rem, 1.8vh, 0.95rem); }
+.level-cards-loading { font-size: var(--type-base); }
+.level1-challenge-title { font-size: var(--type-sm); }
+
+/* ── Level cards ── */
+.level-card-title { font-size: clamp(1rem, 2.6vh, 1.35rem); }
+.level-card-desc { font-size: clamp(0.78rem, 1.75vh, 0.875rem); }
+.level-card-level { font-size: clamp(0.66rem, 1.5vh, 0.74rem); }
+.level-card-chip { font-size: clamp(0.66rem, 1.4vh, 0.74rem); }
+.level-card-panel-badge { font-size: clamp(0.56rem, 1.2vh, 0.64rem); }
+.level-card-panel-label { font-size: clamp(0.58rem, 1.2vh, 0.66rem); }
+.level-card-panel-text { font-size: clamp(0.68rem, 1.4vh, 0.78rem); }
+.btn-level-play { font-size: clamp(0.76rem, 1.65vh, 0.88rem); }
+
+/* ── Body / clue / instructions ── */
+.level1-symptom-text,
+.question-text { font-size: var(--type-md); }
+.level1-guidelines-list,
+.level1-guidelines-toggle,
+.option-text,
+.ps-hint-box,
+#symptom-list li,
+.gpc-name,
+.gpc-age,
+.ps-body-hint,
+.ps-body-hint-text,
+.hint-box,
+#game-hint-text,
+.level1-challenge-hint,
+.level1-answer-feedback,
+.level1-next-btn,
+.level-pass-requirement,
+#level3-scenario-box { font-size: var(--type-base); }
+#level3-scenario-box .l3-hint { font-size: var(--type-sm); }
+
+/* ── Sidebar / organ cards ── */
+.ps-organ-name,
+.ps-organ-card--l1 .ps-organ-name { font-size: var(--type-sm); }
+.ps-organ-disease { font-size: var(--type-sm); }
+.organs-cleared-row { font-size: var(--type-sm); }
+.organs-cleared-row #organs-cleared-count { font-size: var(--type-base); }
+.ps-health-label,
+.health-row-label { font-size: var(--type-sm); }
+.organ-sidebar-name { font-size: var(--type-base); }
+.organ-sidebar-status { font-size: var(--type-sm); }
+
+/* ── Level 1 stats panel ── */
+.level1-big-streak-label,
+.level1-big-score-label { font-size: var(--type-sm); }
+
+/* ── MCQ / game screen ── */
+#screen-game.level-2-play .question-text { font-size: var(--type-lg); }
+#screen-game.level-2-play .option-text { font-size: var(--type-base); }
+#game-symptoms li { font-size: var(--type-sm); }
+.hint-label { font-size: var(--type-xs); }
+
+/* ── Complete / result screens ── */
+.level-complete-sub,
+.level-complete-panel--l1-result .level-complete-sub { font-size: var(--type-base); }
+.complete-stats-level .stat-label,
+.stat-label,
+.l1-result-dashboard .stat-label { font-size: var(--type-xs); }
+.level-complete-summary-title,
+.level-revision-block .revision-title { font-size: var(--type-xs); }
+.level-complete-actions .btn-continue,
+.level-complete-actions--compact .btn-continue { font-size: var(--type-base); }
+.lb-badge-complete,
+.lb-badge-playing { font-size: var(--type-xs); }
+
+/* ── How to play ── */
+.htp-text strong { font-size: var(--type-base); }
+.htp-text span { font-size: var(--type-sm); }
+.scoring-row { font-size: var(--type-sm); }
+.pts { font-size: var(--type-sm); }
+
+/* ── Shared UI ── */
+.toast { font-size: var(--type-sm); }
+.score-popup { font-size: var(--type-base); }
+.organ-hover-card .ohc-name { font-size: var(--type-md); }
+.organ-hover-card .ohc-section { font-size: var(--type-sm); }
+.organ-hover-card .ohc-section strong { font-size: var(--type-xs); }
+.organ-hover-card .ohc-funcs { font-size: var(--type-sm); }
+.organ-hover-card .ohc-badge { font-size: var(--type-xs); }
+.ohc-select-btn { font-size: var(--type-base); }
+.ohc-actions-hint { font-size: var(--type-sm); }
+
+/* ── Body map hotspots (all breakpoints) ── */
+.body-hotspot .hotspot-name { font-size: var(--type-2xs); }
+.body-hotspot .hotspot-label { font-size: var(--type-3xs); }
+#screen-patient.level-1-play .body-hotspot .hotspot-name { font-size: var(--type-2xs); }
+
+@media (max-width: 900px) {
+  .body-hotspot .hotspot-name { font-size: var(--type-2xs); }
+  .body-hotspot .hotspot-label { font-size: var(--type-3xs); }
+  #screen-patient.level-1-play:not(.level-1-mobile) .body-hotspot .hotspot-name {
+    font-size: var(--type-xs);
+  }
+  #screen-patient.level-1-play:not(.level-1-mobile) .level1-symptom-text { font-size: var(--type-md); }
+  #screen-patient.level-1-play:not(.level-1-mobile) .level1-guidelines-list { font-size: var(--type-base); }
+  #screen-patient.level-1-play:not(.level-1-mobile) .ps-organ-card--l1 .ps-organ-name { font-size: var(--type-sm); }
+  #screen-patient.level-1-play:not(.level-1-mobile) .ps-body-hint { font-size: var(--type-base); }
+}
+
+/* ── Mobile Level 1 ── */
+#screen-patient.level-1-play.level-1-mobile .level1-symptom-text,
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-clue-preview { font-size: var(--type-md); }
+#screen-patient.level-1-play.level-1-mobile .level1-symptom-label,
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-clue-strip-label { font-size: var(--type-xs); }
+#screen-patient.level-1-play.level-1-mobile .ps-organ-card--l1 .ps-organ-name,
+#screen-patient.level-1-play.level-1-mobile .hotspot-name-mobile { font-size: var(--type-sm); }
+#screen-patient.level-1-play.level-1-mobile .level1-guidelines-list,
+#screen-patient.level-1-play.level-1-mobile .level1-guidelines-toggle,
+#screen-patient.level-1-play.level-1-mobile .level1-answer-feedback,
+#screen-patient.level-1-play.level-1-mobile .level1-next-btn { font-size: var(--type-base); }
+#screen-patient.level-1-play.level-1-mobile .ps-body-hint,
+#screen-patient.level-1-play.level-1-mobile .ps-body-hint-text { font-size: var(--type-sm); }
+#screen-patient.level-1-play.level-1-mobile .level-play-badge .level-badge-main { font-size: var(--type-2xl); }
+#screen-patient.level-1-play.level-1-mobile .level-play-badge .level-badge-name { font-size: var(--type-base); }
+#screen-patient.level-1-play.level-1-mobile .organs-cleared-row { font-size: var(--type-sm); }
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-nav-btn { font-size: var(--type-sm); }
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-streak-label,
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-score-label,
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-stat-label { font-size: var(--type-sm); }
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-stat--streak .l1-mobile-stat-val,
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-stat--score .l1-mobile-stat-val {
+  font-size: 0.92rem;
+}
+
+/* ── Large titles ── */
+.lb-title { font-size: clamp(1.6rem, 3.8vw, 2.1rem); }
+.complete-title { font-size: clamp(1.55rem, 3.8vw, 2rem); }
+.healed-title { font-size: clamp(1.65rem, 4vw, 2.2rem); }
+.level-complete-title { font-size: clamp(1.5rem, 4.5vw, 2rem); }
+
+/* ── Level select ── */
+#screen-level-select .level-select-title {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: none;
+}
+
+#screen-level-select .level-select-logo {
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+#screen-level-select .level-select-sub,
+#screen-level-select .level-select-user,
+#screen-level-select .level-select-user-name,
+#screen-level-select .level-card-title,
+#screen-level-select .level-card-desc,
+#screen-level-select .level-card-level,
+#screen-level-select .level-card-chip,
+#screen-level-select .level-card-panel-badge,
+#screen-level-select .level-card-panel-label,
+#screen-level-select .level-card-panel-text,
+#screen-level-select .btn-level-play,
+#screen-level-select .btn-back-small,
+#screen-level-select .level-cards-loading {
+  font-family: var(--font-body);
+}
+
+#screen-level-select .level-card-title {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+#screen-level-select .level-card-desc {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  font-size: clamp(0.78rem, 1.75vh, 0.875rem);
+}
+
+#screen-level-select .level-select-sub {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  font-size: clamp(0.75rem, 1.75vh, 0.875rem);
+}
+
+#screen-level-select .level-select-user {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+#screen-level-select .level-card-level {
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+#screen-level-select .level-card-chip {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+#screen-level-select .level-card-panel-badge,
+#screen-level-select .level-card-panel-label {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+#screen-level-select .level-card-panel-label {
+  font-size: clamp(0.72rem, 1.5vh, 0.8125rem);
+}
+
+#screen-level-select .level-card-panel-text {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  font-size: clamp(0.72rem, 1.55vh, 0.8125rem);
+}
+
+#screen-level-select .btn-level-play {
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+/* ── Gameplay headings ── */
+#screen-patient.level-1-play .level1-big-streak-label,
+#screen-patient.level-1-play .level1-big-score-label,
+#screen-patient.level-1-play .level1-attempts-label,
+#screen-patient.level-1-play .level1-symptom-label,
+#screen-patient.level-1-play .level1-challenge-title,
+#screen-patient.level-1-play .ps-organ-list-title,
+#screen-patient.level-1-play .ps-sym-title,
+#screen-patient.level-1-play .panel-title,
+#screen-patient.level-1-play .level1-streak-badge {
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0.04em;
+}
+
+#screen-patient.level-1-play .level1-guidelines-toggle,
+#screen-patient.level-1-play .level1-guidelines-toggle-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.level1-guidelines-title,
+#screen-patient.level-1-play .level1-guidelines-title {
+  display: none !important;
+}
+
+#screen-patient.level-1-play .level1-big-streak-label,
+#screen-patient.level-1-play .level1-big-score-label {
+  font-size: var(--type-sm);
+}
+
+#screen-patient.level-1-play .level1-big-streak-val,
+#screen-patient.level-1-play .level1-big-score-val {
+  font-family: var(--font-body);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  font-size: 2.55rem;
+}
+
+#screen-patient.level-1-play .level1-attempts-val,
+#screen-patient.level-1-play .level1-streak-badge #level1-streak-count {
+  font-family: var(--font-body);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+#screen-game .level-run-stats-title,
+#screen-game .level-run-hero-label,
+#screen-game .level-run-stat-label,
+#screen-game .panel-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0.04em;
+}
+
+#screen-game .level-run-hero-val,
+#screen-game .level-run-stat-val,
+.stat-val,
+.complete-stats-level .stat-val,
+.l1-result-dashboard .stat-val {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+#screen-game .gpc-name,
+#screen-patient .gpc-name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.stat-label,
+.complete-stats-level .stat-label,
+.l1-result-dashboard .stat-label,
+.level-complete-summary-title,
+.level-revision-block .revision-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-stat-label,
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-streak-label,
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-score-label,
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-attempts-label,
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-clue-strip-label,
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-nav-label,
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-section-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+#screen-patient.level-1-play.level-1-mobile .l1-mobile-stat-val {
+  font-family: var(--font-body);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* ── Menu screen ── */
+#screen-menu .game-logo {
+  font-family: var(--font-body);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+#screen-menu .menu-top-badge,
+#screen-menu .menu-top-badge--mobile,
+#screen-menu .menu-intro-text,
+#screen-menu .game-tagline,
+#screen-menu .menu-action-label,
+#screen-menu .btn-primary,
+#screen-menu .btn-menu-secondary,
+#screen-menu .patient-label {
+  font-family: var(--font-body);
+}
+
+#screen-menu .menu-top-badge,
+#screen-menu .menu-top-badge--mobile {
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.06em;
+}
+
+#screen-menu .menu-intro-text {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+#screen-menu .game-tagline {
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.04em;
+}
+
+#screen-menu .menu-action-label,
+#screen-menu .btn-primary,
+#screen-menu .btn-menu-secondary {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+#screen-menu .patient-label {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}

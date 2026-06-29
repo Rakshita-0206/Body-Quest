@@ -1,0 +1,92 @@
+{
+  "blood": {
+    "challengePrompts": [
+      "Transports dissolved oxygen, nutrients, and cellular waste products throughout the vascular network.",
+      "Flows as a liquid connective tissue to distribute core heat and maintain internal fluid balance.",
+      "Carries immune cells and clotting factors to sites of infection or tissue damage.",
+      "Utilizes specialized iron-rich proteins to bind and deliver respiratory gases.",
+      "Acts as the main circulatory medium connecting all body systems."
+    ]
+  },
+  "eyes": {
+    "challengePrompts": [
+      "Focuses incoming light rays onto a photoreceptive layer to form detailed images.",
+      "Adjusts internal aperture size to regulate the amount of light entering the receptor.",
+      "Translates electromagnetic radiation from the environment into electrical impulses for interpretation.",
+      "Uses specialized rod and cone cells to perceive shapes, movement, and colors.",
+      "Bends light through a transparent crystalline structure to focus on near or distant objects."
+    ]
+  },
+  "bones": {
+    "challengePrompts": [
+      "Provides the rigid structural framework that determines body shape and height.",
+      "Serves as the primary mineral reservoir, storing calcium and phosphorus for systemic use.",
+      "Forms protective hard casings around delicate internal cavities like the cranium and thoracic cage.",
+      "Provides leverage points for skeletal muscles to produce coordinated movement.",
+      "Houses the specialized marrow tissue responsible for generating new blood cells."
+    ]
+  },
+  "lungs": {
+    "challengePrompts": [
+      "Provides a massive, thin-walled surface area for gas exchange between air and the circulatory system.",
+      "Uses pressure gradients to draw atmospheric air into the body and expel carbon dioxide-rich gas.",
+      "Extracts gaseous waste from surrounding pulmonary capillaries to be expelled from the body.",
+      "Contains microscopic air sacs (alveoli) where passive diffusion of gases occurs.",
+      "Maintains acid-base balance by regulating the rate of carbon dioxide elimination."
+    ]
+  },
+  "stomach": {
+    "challengePrompts": [
+      "Temporarily stores ingested food and mechanically churns it into a semi-liquid mixture called chyme.",
+      "Secretes highly acidic juices to kill micro-organisms and activate protein-digesting enzymes.",
+      "Initiates the chemical breakdown of complex proteins using pepsin in an extremely low pH environment.",
+      "Uses thick muscular walls to knead food particles and mix them thoroughly with gastric secretions.",
+      "Protects its own wall from self-digestion using a thick, alkaline mucosal barrier."
+    ]
+  },
+  "brain": {
+    "challengePrompts": [
+      "Acts as the primary processing center for coordinating bodily actions and responses.",
+      "Interprets complex sensory inputs and initiates motor commands to execute movements.",
+      "Enables cognitive processes including logical reasoning, memory storage, and emotional regulation.",
+      "Regulates involuntary homeostatic activities such as breathing rate and body temperature.",
+      "Maintains balance and posture through integration of vestibular and visual feedback."
+    ]
+  },
+  "skin": {
+    "challengePrompts": [
+      "Serves as the primary physical barrier protecting internal tissues from dehydration and pathogen entry.",
+      "Regulates internal body temperature through controlled sweat secretion and blood flow adjustments.",
+      "Contains diverse tactile receptors to detect external pressure, temperature variations, and pain.",
+      "Synthesizes inactive Vitamin D when exposed to ultraviolet radiation from sunlight.",
+      "Excretes small amounts of excess salts and nitrogenous wastes through sweat glands."
+    ]
+  },
+  "heart": {
+    "challengePrompts": [
+      "Generates the hydrostatic pressure necessary to pump oxygenated and deoxygenated blood through separate pathways.",
+      "Maintains continuous, unidirectional flow of life-sustaining fluid using specialized valves.",
+      "Utilizes a specialized cardiac muscle structure to contract rhythmically without conscious control.",
+      "Features four distinct muscular chambers working in a coordinated cycle to separate oxygen-rich and oxygen-poor fluids.",
+      "Pumps deoxygenated fluid to the respiratory exchange organs and oxygenated fluid to the rest of the body."
+    ]
+  },
+  "small_intestine": {
+    "challengePrompts": [
+      "Serves as the principal site for the chemical digestion of carbohydrates, proteins, and fats.",
+      "Absorbs the vast majority of water-soluble and fat-soluble nutrients into the bloodstream.",
+      "Features microscopic finger-like projections to maximize surface area for nutrient absorption.",
+      "Receives bile and pancreatic juices to neutralize acidic input and emulsify lipids.",
+      "Utilizes brush-border enzymes to complete the breakdown of complex food molecules into monomer forms."
+    ]
+  },
+  "large_intestine": {
+    "challengePrompts": [
+      "Reclaims the remaining water and mineral ions from indigestible dietary residues.",
+      "Compacts and stores solid waste material before it is eliminated from the body.",
+      "Harbors a dense community of symbiotic micro-organisms that ferment undigested complex fibers.",
+      "Relies on its resident microbiome to synthesize and absorb essential nutrients, such as Vitamin K.",
+      "Lubricates indigestible waste with mucus to facilitate smooth passage during elimination."
+    ]
+  }
+}

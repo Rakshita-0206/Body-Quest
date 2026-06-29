@@ -1,0 +1,92 @@
+{
+  "blood": {
+    "challengePrompts": [
+      "Which specialized body fluid benefits from Spinach + lemon juice to supply iron and an absorption booster to synthesize oxygen-transporting proteins?",
+      "Which circulatory medium benefits from Spinach + lemon juice to restore the central iron mineral in its respiratory pigment and prevent systematic fatigue?",
+      "Which vital transport fluid benefits from Spinach + lemon juice to optimize non-heme iron uptake for building healthy erythrocytes?",
+      "Which complex fluid benefits from Spinach + lemon juice to correct a microcytic deficiency that causes pale conjunctiva and weakness?",
+      "Which transport fluid benefits from Spinach + lemon juice to boost hemoglobin synthesis and maintain optimal systemic oxygen carriage?"
+    ]
+  },
+  "eyes": {
+    "challengePrompts": [
+      "Which sensory organ benefits from Egg yolk to provide ready-to-use retinol for light-sensitive rod cell pigments?",
+      "Which visual organ benefits from Egg yolk to supply fat-soluble preformed Vitamin A to prevent drying of the cornea?",
+      "Which sensory organ benefits from Egg yolk to restore photoreceptor health when a lack of vegetables causes night-vision issues?",
+      "Which vision-processing organ benefits from Egg yolk to maintain the clarity of the cornea and improve dim-light vision?",
+      "Which diagnostic organ benefits from Egg yolk to deliver the essential retinal nutrients required for proper light-signal transduction?"
+    ]
+  },
+  "bones": {
+    "challengePrompts": [
+      "Which rigid skeletal system benefits from Fortified milk to deliver calcium along with the specific vitamin needed to absorb it?",
+      "Which hard structural matrix benefits from Fortified milk to deposit essential minerals into a developing skeletal framework?",
+      "Which dense structural elements benefit from Fortified milk to prevent physical bending and strengthen load-bearing skeletal elements?",
+      "Which structural organ system benefits from Fortified milk to correct skeletal soft spots and promote matrix mineralization?",
+      "Which hard structural framework benefits from Fortified milk to maintain peak mineral density and prevent skeletal fractures?"
+    ]
+  },
+  "lungs": {
+    "challengePrompts": [
+      "Which primary respiratory organ benefits from Amla to provide concentrated antioxidants that protect delicate, thin-walled air sacs from oxidative stress?",
+      "Which respiratory organ benefits from Amla to support the ciliated epithelial lining that sweeps away inhaled foreign particles?",
+      "Which gas-exchanging organ benefits from Amla to supply Vitamin C required to maintain the elastic fibers that assist in chest expansion?",
+      "Which primary respiratory organ benefits from Amla to neutralize inhaled pollutants and support tissue repair in bronchial passages?",
+      "Which ventilation organ benefits from Amla to boost immune defenses against recurrent upper and lower respiratory tract infections?"
+    ]
+  },
+  "stomach": {
+    "challengePrompts": [
+      "Which J-shaped digestive organ benefits from Oats to form a soothing gel barrier that protects its epithelial lining from corrosive acid?",
+      "Which upper digestive organ benefits from Oats to slow the rate of gastric emptying, reducing rapid acid fluctuations after meals?",
+      "Which muscular digestive organ benefits from Oats to protect its mucosal walls from mechanical irritation and gastric juice damage?",
+      "Which chemical digestive organ benefits from Oats to provide highly digestible soluble fibers that buffer excess hydrochloric acid?",
+      "Which gastric organ benefits from Oats to heal mucosal irritation caused by irregular eating patterns and high acid levels?"
+    ]
+  },
+  "brain": {
+    "challengePrompts": [
+      "Which central processing organ benefits from Walnuts + dal to provide essential fatty acids needed to construct insulating myelin sheaths around axons?",
+      "Which master processing organ benefits from Walnuts + dal to supply structural lipids and folate for neurotransmitter synthesis and intense concentration?",
+      "Which central nervous organ benefits from Walnuts + dal to enhance memory consolidation and improve synaptic transmission speed?",
+      "Which cognitive processing organ benefits from Walnuts + dal to protect neural tissue from age-related decline and mental exhaustion?",
+      "Which master control organ benefits from Walnuts + dal to support neural development, executive focus, and logical processing?"
+    ]
+  },
+  "skin": {
+    "challengePrompts": [
+      "Which outer protective barrier benefits from Almonds to deliver Vitamin E and niacin to repair UV-damaged epithelial cells?",
+      "Which cutaneous organ benefits from Almonds to restore the protective epidermal lipid barrier and resolve red, itchy patches?",
+      "Which external tissue barrier benefits from Almonds to supply essential fatty acids and antioxidants to prevent cellular peeling and cracking?",
+      "Which primary physical barrier benefits from Almonds to promote rapid healing of surface wounds and reduce cutaneous sensitivity?",
+      "Which large external organ benefits from Almonds to maintain elasticity and prevent dryness in the body's primary protective cover?"
+    ]
+  },
+  "heart": {
+    "challengePrompts": [
+      "Which muscular circulatory organ benefits from Banana to supply potassium to counteract high sodium and regulate contraction rhythm?",
+      "Which central muscular pump benefits from Banana to provide electrolytes that allow vascular smooth muscles to dilate and lower pressure?",
+      "Which circulatory organ benefits from Banana to restore electrical stability when irregular beats occur after eating salty foods?",
+      "Which central muscular pump benefits from Banana to reduce myocardial workload and prevent high arterial pressure?",
+      "Which cardiovascular organ benefits from Banana to maintain the rhythmic electrical signals that drive continuous blood circulation?"
+    ]
+  },
+  "small_intestine": {
+    "challengePrompts": [
+      "Which specialized digestive organ benefits from Pumpkin seeds to supply zinc to rebuild microscopic absorbing villi after damage?",
+      "Which specific digestive section benefits from Pumpkin seeds to restore brush-border enzyme activity and prevent nutrient malabsorption?",
+      "Which absorptive organ benefits from Pumpkin seeds to promote epithelial enterocyte renewal and resolve chronic malabsorptive watery stools?",
+      "Which nutrient-absorbing organ benefits from Pumpkin seeds to restore active transport of glucose and amino acids across its lining?",
+      "Which long digestive tube benefits from Pumpkin seeds to optimize absorption of essential micronutrients when nails show systemic white spots?"
+    ]
+  },
+  "large_intestine": {
+    "challengePrompts": [
+      "Which terminal digestive organ benefits from Whole wheat bread to provide insoluble roughage that stimulates wave-like colonic contractions?",
+      "Which lower digestive structure benefits from Whole wheat bread to add bulk to digested residue, preventing slow and painful colonic passage?",
+      "Which gastrointestinal organ benefits from Whole wheat bread to support beneficial bacterial fermentation and produce short-chain fatty acids?",
+      "Which lower digestive tube benefits from Whole wheat bread to draw water into stool, preventing excessive drying in the colon?",
+      "Which final waste-compacting organ benefits from Whole wheat bread to ease evacuation and reduce lower abdominal cramping?"
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "sort_order": 1,
+    "title": "Organ Identification",
+    "description": "Match organ functions to the body map. All 10 organs.",
+    "min_pass_score": 60,
+    "organ_ids": [
+      "blood",
+      "eyes",
+      "bones",
+      "lungs",
+      "stomach",
+      "brain",
+      "skin",
+      "heart",
+      "small_intestine",
+      "large_intestine"
+    ]
+  },
+  {
+    "id": 2,
+    "sort_order": 2,
+    "title": "Disease Matching",
+    "description": "Match diseases to organs on the body map.",
+    "min_pass_score": 70,
+    "organ_ids": [
+      "blood",
+      "eyes",
+      "bones",
+      "lungs",
+      "stomach",
+      "brain",
+      "skin",
+      "heart",
+      "small_intestine",
+      "large_intestine"
+    ]
+  },
+  {
+    "id": 3,
+    "sort_order": 3,
+    "title": "Food Matching",
+    "description": "Match healing foods to organs on the body map.",
+    "min_pass_score": 60,
+    "organ_ids": [
+      "blood",
+      "eyes",
+      "bones",
+      "lungs",
+      "stomach",
+      "brain",
+      "skin",
+      "heart",
+      "small_intestine",
+      "large_intestine"
+    ]
+  },
+  {
+    "id": 4,
+    "sort_order": 4,
+    "title": "Symptom Diagnosis",
+    "description": "Match symptoms to organs on the body map.",
+    "min_pass_score": 60,
+    "organ_ids": [
+      "blood",
+      "eyes",
+      "bones",
+      "lungs",
+      "stomach",
+      "brain",
+      "skin",
+      "heart",
+      "small_intestine",
+      "large_intestine"
+    ]
+  }
+]

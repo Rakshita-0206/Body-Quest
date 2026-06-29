@@ -1,0 +1,92 @@
+{
+  "blood": {
+    "challengePrompts": [
+      "Rohan experiences sudden dizziness upon standing, and a look in the mirror shows his lips and fingernail beds look unusually pale.",
+      "Rohan feels constantly exhausted after minor activities, and a laboratory report confirms his circulating hemoglobin levels are lower than normal.",
+      "Rohan complains of persistent cold hands and feet, which his doctor explains is due to a drop in his body's total red cell count.",
+      "Rohan feels lightheaded while climbing stairs, and his laboratory chart shows a severe drop in his overall hematocrit percentage.",
+      "Rohan's blood test reveals microcytic and hypochromic red cells that physically lack the iron required to bind and carry enough oxygen."
+    ]
+  },
+  "eyes": {
+    "challengePrompts": [
+      "Rohan frequently stumbles over objects in a dimly lit room, though his vision is absolutely flawless during the bright daylight hours.",
+      "Rohan complains that his eyes feel dry, gritty, and irritated, showing signs of severe drying on the cornea and conjunctiva.",
+      "Rohan struggles to find his seat when entering a dark movie theater, completely failing to adapt to the darkness.",
+      "Rohan complains of severe dryness under his eyelids, making it impossible to produce normal tears to lubricate the outer lens.",
+      "Rohan's teacher notices that his photoreceptive rod cells fail to function, preventing him from seeing clearly once the sun goes down."
+    ]
+  },
+  "bones": {
+    "challengePrompts": [
+      "Rohan complains of deep, aching skeletal pain in his legs, and his knees physically knock together when walking due to a soft matrix.",
+      "Rohan's legs show a visible outward bowing curvature, making it highly uncomfortable to bear weight while standing or running.",
+      "Rohan's pediatric doctor notices soft areas along his skeletal growth plates and a severe delay in tooth eruption.",
+      "Rohan experiences frequent wrist fractures from simple playground slips, signaling a major loss in skeletal mineral density.",
+      "Rohan has an incredibly slow recovery from a hairline fracture and complains of deep soreness within his skeletal framework."
+    ]
+  },
+  "lungs": {
+    "challengePrompts": [
+      "Rohan's chest feels tight and he gasps for air because a loss of alveolar surface area slows down his internal gas exchange rate.",
+      "Rohan experiences shallow, rapid breathing and a dry bark-like cough centered entirely within his tight bronchial airways.",
+      "Rohan catches respiratory infections frequently, leaving his upper and lower respiratory tracts inflamed with a distinct wheezing sound.",
+      "Rohan cannot force enough air out to blow out a candle because his respiratory passages have lost their elastic recoil.",
+      "Rohan struggles to take deep breaths, complaining that a drop in the rate of carbon dioxide clearance makes him feel suffocated."
+    ]
+  },
+  "stomach": {
+    "challengePrompts": [
+      "Rohan experiences a burning sensation in his upper abdomen shortly after eating, caused by excess hydrochloric acid irritating his tissue.",
+      "Rohan complains of painful acid reflux and a sour taste in his throat when his lower esophageal sphincter fails to keep gastric juice down.",
+      "Rohan avoids eating because it triggers sharp, burning cramps in the upper middle area where gastric ulcers are forming.",
+      "Rohan complains of an intense churning feeling in his upper belly, indicating a major failure in his pepsin-dependent chemical digestion.",
+      "Rohan feels a heavy rush of stomach acid rising directly into his throat whenever he lies down horizontally after lunch."
+    ]
+  },
+  "brain": {
+    "challengePrompts": [
+      "Rohan finds it extremely difficult to concentrate on a single task and forgets spoken instructions given mere minutes ago by his teacher.",
+      "Rohan complains of persistent brain fog, sluggish synaptic transmission speed, and an absolute inability to memorize simple formulas.",
+      "Rohan zones out during lectures and struggles with the executive function needed to organize his daily school schedule.",
+      "Rohan experiences slow motor responses and coordination errors when the master organ of the central nervous system faces mental exhaustion.",
+      "Rohan's mother notices he is highly irritable, loses cognitive focus instantly, and has poor short-term recall of yesterday's events."
+    ]
+  },
+  "skin": {
+    "challengePrompts": [
+      "Rohan has red, itchy patches on his elbows and cheeks that flare up immediately when his outer epidermal lipid barrier dries out.",
+      "Rohan's hands develop painful cracks and rough, scaling surfaces on his body's outermost cutaneous layer.",
+      "Rohan develops a raised, peeling, photosensitive rash on his arms after spending a hot afternoon outdoors without melanin protection.",
+      "Rohan complains that his outer epithelial seal is flaking off, leaving his body highly sensitive and vulnerable to bacterial entry.",
+      "Rohan's lips are chapped and bleeding, and dry, scaly rashes have spread across the entire external surface area of his arms."
+    ]
+  },
+  "heart": {
+    "challengePrompts": [
+      "Rohan's chest pounds rapidly and irregularly because a sudden drop in blood potassium has disrupted his cardiac contraction rhythm.",
+      "Rohan's central muscular pump experiences severe strain and ventricular hypertrophy from constantly pushing against high arterial blood pressure.",
+      "Rohan's specialized pacemaking node fails to maintain a steady, rhythmic pulse, causing a fluttering sensation behind his breastbone.",
+      "Rohan feels his pulse racing at an exhausting rate even when sitting quietly at his desk, accompanied by heavy palpitations.",
+      "Rohan's doctor detects a murmur and notes that narrowing coronary vessels are reducing the oxygen supply to his thick myocardial walls."
+    ]
+  },
+  "small_intestine": {
+    "challengePrompts": [
+      "Rohan is eating a calorie-rich diet but continues to lose weight because the microscopic absorbing villi in his gut are severely blunted.",
+      "Rohan passes loose, greasy stools frequently because his damaged mucosal lining completely fails to absorb amino acids and fatty acids.",
+      "Rohan's nails show white spots because his brush-border enzymes are impaired, preventing the active transport of digested nutrients.",
+      "Rohan experiences loud rumbling sounds and chronic watery stools strictly caused by a failure to absorb micronutrients in his upper gut.",
+      "Rohan's growth curve has flattened due to an inability to absorb fat-soluble vitamins (A, D, E, K) across his digestive lining walls."
+    ]
+  },
+  "large_intestine": {
+    "challengePrompts": [
+      "Rohan has not passed stool for four days because his lower digestive tract is extracting too much water from his indigestible waste.",
+      "Rohan passes small, dry, hard fecal pellets with severe straining because a lack of dietary fiber has slowed his colonic transit time.",
+      "Rohan's lower belly feels hard, and a massive disruption in his colonic gut microbiome has led to severe flatulence and gas accumulation.",
+      "Rohan spends long periods on the toilet, struggling with severe constipation and painful lower abdominal muscle spasms.",
+      "Rohan's fecal elimination is highly irregular, often delayed by a full week, causing toxic backup and compaction in his terminal colon."
+    ]
+  }
+}

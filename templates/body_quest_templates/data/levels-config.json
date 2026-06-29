@@ -1,0 +1,92 @@
+{
+  "levels": {
+    "1": {
+      "id": 1,
+      "title": "Organ Identification",
+      "description": "Match organ functions to the body map.",
+      "mode": "identify",
+      "promptType": "function",
+      "organIds": [
+        "blood",
+        "eyes",
+        "bones",
+        "lungs",
+        "stomach",
+        "brain",
+        "skin",
+        "heart",
+        "small_intestine",
+        "large_intestine"
+      ]
+    },
+    "2": {
+      "id": 2,
+      "title": "Disease Matching",
+      "description": "Match diseases to organs on the body map.",
+      "mode": "identify",
+      "promptType": "disease",
+      "organIds": [
+        "blood",
+        "eyes",
+        "bones",
+        "lungs",
+        "stomach",
+        "brain",
+        "skin",
+        "heart",
+        "small_intestine",
+        "large_intestine"
+      ]
+    },
+    "3": {
+      "id": 3,
+      "title": "Food Matching",
+      "description": "Match healing foods to organs on the body map.",
+      "mode": "identify",
+      "promptType": "food",
+      "organIds": [
+        "blood",
+        "eyes",
+        "bones",
+        "lungs",
+        "stomach",
+        "brain",
+        "skin",
+        "heart",
+        "small_intestine",
+        "large_intestine"
+      ]
+    },
+    "4": {
+      "id": 4,
+      "title": "Symptom Diagnosis",
+      "description": "Match symptoms to organs on the body map.",
+      "mode": "identify",
+      "promptType": "symptom",
+      "organIds": [
+        "blood",
+        "eyes",
+        "bones",
+        "lungs",
+        "stomach",
+        "brain",
+        "skin",
+        "heart",
+        "small_intestine",
+        "large_intestine"
+      ]
+    }
+  },
+  "allOrganIds": [
+    "blood",
+    "eyes",
+    "bones",
+    "lungs",
+    "stomach",
+    "brain",
+    "skin",
+    "heart",
+    "small_intestine",
+    "large_intestine"
+  ]
+}

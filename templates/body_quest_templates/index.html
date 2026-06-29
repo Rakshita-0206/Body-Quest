@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <base href="/body-quest/">
+  <title>Body Quest — Journey Inside the Human Body | UTMT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/body-quest/ui-scale.css?v=18">
+  <link rel="stylesheet" href="/body-quest/style.css?v=18">
+  <link rel="stylesheet" href="/body-quest/level1-mobile.css?v=6">
+  <link rel="stylesheet" href="/body-quest/typography.css?v=13">
+  <script src="/body-quest/js/viewport-normalize.js?v=7"></script>
+</head>
+<body>
+
+<!-- SCREEN: MENU -->
+
+<!-- --------------------------------------------------------------------------- -->
+
+<div class="screen" data-screen="level-select" id="screen-level-select">
+  <div class="level-select-bg" aria-hidden="true"></div>
+  <header class="level-select-header">
+    <button type="button" class="btn-back-small" onclick="backToMenu()">← Menu</button>
+    <div class="level-select-brand">
+      <div class="level-select-logo">🫀 BODY QUEST</div>
+      <h1 class="level-select-title">Choose Your Level</h1>
+      <p class="level-select-sub">Heal Rohan organ by organ — finish each level to unlock the next</p>
+    </div>
+    <div class="level-select-user" id="level-select-username"></div>
+  </header>
+  <div class="level-select-body">
+    <div id="level-cards" class="level-cards-list">
+      <div class="level-cards-loading">Loading levels…</div>
+    </div>
+  </div>
+</div>
+
+<div class="screen level-complete-screen" data-screen="level1-complete" id="screen-level1-complete">
+  <div class="level-complete-bg level-complete-bg--1" aria-hidden="true"></div>
+  <div class="level-complete-scroll">
+    <div class="level-complete-panel level-complete-panel--1 level-complete-panel--l1-result">
+      <div class="level-complete-hero level-complete-hero--compact">
+        <div class="level-complete-badge level-complete-badge--1" aria-hidden="true">🟢</div>
+        <h1 class="healed-title level-complete-title">🎉 Level 1 Complete!</h1>
+        <p class="healed-message level-complete-sub" id="l1-complete-msg">You identified all organs correctly!</p>
+      </div>
+      <div class="l1-result-dashboard" aria-label="Level 1 results">
+        <div class="l1-result-row l1-result-row--three">
+          <div class="stat-card stat-card-score"><div class="stat-val" id="l1-score-display">0</div><div class="stat-label">🌟 Total Score</div></div>
+          <div class="stat-card stat-card-streak"><div class="stat-val" id="l1-streak-display">0</div><div class="stat-label">🔥 Final Streak</div></div>
+          <div class="stat-card stat-card-attempts"><div class="stat-val" id="l1-attempts-display">0</div><div class="stat-label">📝 Attempts Used</div></div>
+        </div>
+      </div>
+      <div class="level-complete-actions level-complete-actions--compact">
+        <button class="btn-continue" onclick="startLevelAfterComplete(2)">Start Level 2 →</button>
+        <button class="btn-menu" onclick="backToMenu()">Menu</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="screen level-complete-screen" data-screen="level1-gameover" id="screen-level1-gameover">
+  <div class="level-complete-bg level-complete-bg--3" aria-hidden="true"></div>
+  <div class="level-complete-scroll">
+    <div class="level-complete-panel level-complete-panel--3 level-complete-panel--l1-result">
+      <div class="level-complete-hero level-complete-hero--compact">
+        <div class="level-complete-badge level-complete-badge--3" aria-hidden="true">💔</div>
+        <h1 class="level-complete-title level-complete-title--fail">Game Over</h1>
+        <p class="healed-message level-complete-sub" id="l1go-msg">You ran out of attempts before reaching the required streak.</p>
+      </div>
+      <div class="l1-result-dashboard" aria-label="Level 1 results">
+        <div class="l1-result-row l1-result-row--three">
+          <div class="stat-card stat-card-score"><div class="stat-val" id="l1go-score-display">0</div><div class="stat-label">🌟 Total Score</div></div>
+          <div class="stat-card stat-card-streak"><div class="stat-val" id="l1go-streak-display">0</div><div class="stat-label">🔥 Final Streak</div></div>
+          <div class="stat-card stat-card-attempts"><div class="stat-val" id="l1go-attempts-display">0</div><div class="stat-label">📝 Attempts Used</div></div>
+        </div>
+      </div>
+      <div class="level-complete-actions level-complete-actions--compact">
+        <button class="btn-continue" onclick="retryCurrentLevel()">🔄 Retry Level 1</button>
+        <button class="btn-menu" onclick="goToLevelSelect()">Level Select</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="screen level-complete-screen" data-screen="level2-complete" id="screen-level2-complete">
+  <div class="level-complete-bg level-complete-bg--2" aria-hidden="true"></div>
+  <div class="level-complete-scroll">
+    <div class="level-complete-panel level-complete-panel--2 level-complete-panel--l1-result">
+      <div class="level-complete-hero level-complete-hero--compact">
+        <div class="level-complete-badge level-complete-badge--2" aria-hidden="true">🟡</div>
+        <h1 class="healed-title level-complete-title" id="l2-complete-title">🎉 Level 2 Complete!</h1>
+        <p class="healed-message level-complete-sub" id="l2-complete-msg">All organs investigated and healed!</p>
+      </div>
+      <div class="l1-result-dashboard" aria-label="Level 2 results">
+        <div class="l1-result-row l1-result-row--three">
+          <div class="stat-card stat-card-score"><div class="stat-val" id="l2-score-display">0</div><div class="stat-label">🌟 Total Score</div></div>
+          <div class="stat-card stat-card-streak"><div class="stat-val" id="l2-streak-display">0</div><div class="stat-label">🔥 Final Streak</div></div>
+          <div class="stat-card stat-card-attempts"><div class="stat-val" id="l2-attempts-display">0</div><div class="stat-label">📝 Attempts Used</div></div>
+        </div>
+      </div>
+      <div class="level-complete-actions level-complete-actions--compact" id="l2-pass-actions">
+        <button class="btn-continue" onclick="startLevelAfterComplete(3)">Start Level 3 →</button>
+        <button class="btn-menu" onclick="goToLevelSelect()">Level Select</button>
+      </div>
+      <div class="level-complete-actions level-complete-actions--compact hidden" id="l2-fail-actions">
+        <button class="btn-continue" onclick="retryCurrentLevel()">🔄 Retry Level 2</button>
+        <button class="btn-menu" onclick="goToLevelSelect()">Level Select</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="screen level-complete-screen" data-screen="level3-complete" id="screen-level3-complete">
+  <div class="level-complete-bg level-complete-bg--3" aria-hidden="true"></div>
+  <div class="level-complete-scroll">
+    <div class="level-complete-panel level-complete-panel--3 level-complete-panel--l1-result">
+      <div class="level-complete-hero level-complete-hero--compact">
+        <div class="level-complete-badge level-complete-badge--3" aria-hidden="true">🔴</div>
+        <h1 class="healed-title level-complete-title" id="l3-complete-title">🎉 Level 3 Complete!</h1>
+        <p class="healed-message level-complete-sub" id="l3-complete-msg">You mastered advanced diagnosis!</p>
+      </div>
+      <div class="l1-result-dashboard" aria-label="Level 3 results">
+        <div class="l1-result-row l1-result-row--three">
+          <div class="stat-card stat-card-score"><div class="stat-val" id="l3-score-display">0</div><div class="stat-label">🌟 Total Score</div></div>
+          <div class="stat-card stat-card-streak"><div class="stat-val" id="l3-streak-display">0</div><div class="stat-label">🔥 Final Streak</div></div>
+          <div class="stat-card stat-card-attempts"><div class="stat-val" id="l3-attempts-display">0</div><div class="stat-label">📝 Attempts Used</div></div>
+        </div>
+      </div>
+      <div class="level-complete-actions level-complete-actions--compact" id="l3-pass-actions">
+        <button class="btn-continue" onclick="startLevelAfterComplete(4)">Start Level 4 →</button>
+        <button class="btn-menu" onclick="goToLevelSelect()">Level Select</button>
+      </div>
+      <div class="level-complete-actions level-complete-actions--compact hidden" id="l3-fail-actions">
+        <button class="btn-continue" onclick="retryCurrentLevel()">🔄 Retry Level 3</button>
+        <button class="btn-menu" onclick="goToLevelSelect()">Level Select</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="screen level-complete-screen" data-screen="level4-complete" id="screen-level4-complete">
+  <div class="level-complete-bg level-complete-bg--3" aria-hidden="true"></div>
+  <div class="level-complete-scroll">
+    <div class="level-complete-panel level-complete-panel--3 level-complete-panel--l1-result">
+      <div class="level-complete-hero level-complete-hero--compact">
+        <div class="level-complete-badge level-complete-badge--4" aria-hidden="true">🟣</div>
+        <h1 class="healed-title level-complete-title" id="l4-complete-title">🎉 Level 4 Complete!</h1>
+        <p class="healed-message level-complete-sub" id="l4-complete-msg">You matched all symptoms to organs!</p>
+      </div>
+      <div class="l1-result-dashboard" aria-label="Level 4 results">
+        <div class="l1-result-row l1-result-row--three">
+          <div class="stat-card stat-card-score"><div class="stat-val" id="l4-score-display">0</div><div class="stat-label">🌟 Total Score</div></div>
+          <div class="stat-card stat-card-streak"><div class="stat-val" id="l4-streak-display">0</div><div class="stat-label">🔥 Final Streak</div></div>
+          <div class="stat-card stat-card-attempts"><div class="stat-val" id="l4-attempts-display">0</div><div class="stat-label">📝 Attempts Used</div></div>
+        </div>
+      </div>
+      <div class="level-complete-actions level-complete-actions--compact" id="l4-pass-actions">
+        <button class="btn-continue" onclick="goToFinalComplete()">View Final Results →</button>
+        <button class="btn-menu" onclick="goToLevelSelect()">Level Select</button>
+      </div>
+      <div class="level-complete-actions level-complete-actions--compact hidden" id="l4-fail-actions">
+        <button class="btn-continue" onclick="retryCurrentLevel()">🔄 Retry Level 4</button>
+        <button class="btn-menu" onclick="goToLevelSelect()">Level Select</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- --------------------------------------------------------------------------- -->
+
+
+
+<div class="screen active" data-screen="menu" id="screen-menu">
+  <div id="particle-container"></div>
+  <div class="menu-mobile-decor" aria-hidden="true">
+    <span class="menu-float-icon" style="--fx:8%;--fy:68%">🦴</span>
+    <span class="menu-float-icon" style="--fx:82%;--fy:58%">❤️</span>
+    <span class="menu-float-icon" style="--fx:18%;--fy:82%">🩸</span>
+    <span class="menu-float-icon" style="--fx:75%;--fy:78%">🫁</span>
+    <span class="menu-float-icon" style="--fx:45%;--fy:88%">➕</span>
+    <span class="menu-float-icon" style="--fx:88%;--fy:42%">🩺</span>
+  </div>
+  <div class="menu-top-badge menu-top-badge--desktop">UTMT Learning Portal</div>
+  <div class="menu-layout">
+    <div class="menu-mobile-stack">
+      <div class="menu-portal-row">
+        <span class="menu-portal-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <div class="menu-top-badge menu-top-badge--mobile">
+          <span class="menu-portal-icon" aria-hidden="true">🩺</span>
+          <span>UTMT Learning Portal</span>
+        </div>
+        <span class="menu-portal-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      </div>
+      <div class="menu-intro-card">
+        <div class="menu-intro-ornament" aria-hidden="true">
+          <span class="menu-intro-rule"></span>
+          <span class="menu-intro-diamond"></span>
+          <span class="menu-intro-rule"></span>
+        </div>
+        <p class="menu-intro-text">Heal Rohan organ by organ — explore NCERT anatomy challenges</p>
+        <div class="menu-intro-glowline" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="menu-left">
+      <div class="menu-body-figure">
+        <img src="images/human_body_3d.png" alt="Human Body"/>
+      </div>
+    </div>
+    <div class="menu-center">
+      <div class="menu-logo-wrap">
+        <div class="menu-stethoscope">🩺</div>
+        <div class="game-logo">BODY<span class="logo-glow" aria-hidden="true"></span><span class="logo-quest">QUEST</span></div>
+        <div class="menu-tagline-row">
+          <span class="menu-tagline-rule" aria-hidden="true"></span>
+          <div class="game-tagline">Journey Inside the Human Body</div>
+          <span class="menu-tagline-rule" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="menu-btn-group">
+        <button type="button" class="btn-primary menu-action-btn menu-action-btn--start" onclick="startGame()">
+          <span class="menu-action-icon" aria-hidden="true">🚀</span>
+          <span class="menu-action-label">START JOURNEY</span>
+          <span class="menu-action-chevron" aria-hidden="true">›</span>
+        </button>
+        <button type="button" class="btn-menu-secondary btn-green menu-action-btn menu-action-btn--how" onclick="showHowToPlay()">
+          <span class="menu-action-icon" aria-hidden="true">📖</span>
+          <span class="menu-action-label">HOW TO PLAY</span>
+          <span class="menu-action-chevron" aria-hidden="true">›</span>
+        </button>
+        <button type="button" class="btn-menu-secondary btn-purple menu-action-btn menu-action-btn--progress" onclick="showMyProgress()">
+          <span class="menu-action-icon" aria-hidden="true">📊</span>
+          <span class="menu-action-label">MY PROGRESS</span>
+          <span class="menu-action-chevron" aria-hidden="true">›</span>
+        </button>
+      </div>
+      <div class="menu-organs-preview">
+        <span title="Blood">🩸</span><span title="Eyes">👁️</span><span title="Bones">🦴</span><span title="Lungs">🫁</span><span title="Stomach">🫃</span>
+      </div>
+    </div>
+    <div class="menu-right">
+      <div class="menu-patient-wrap">
+        <!-- Patient pod image -->
+        <img
+          src="images/patient_pod.png"
+          alt="Patient in Medical Pod"
+          class="patient-pod-img"
+        />
+        <div class="patient-status-dots">
+          <span class="pdot red"></span>
+          <span class="pdot red"></span>
+          <span class="pdot red"></span>
+        </div>
+        <div class="patient-label">Patient needs your help!</div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-mobile-waves" aria-hidden="true"></div>
+</div>
+<div class="screen" data-screen="patient" id="screen-patient">
+  <!-- Top bar -->
+  <div class="ps-topbar">
+    <button type="button" class="btn-back-small btn-menu-nav" onclick="backToMenu()">← Menu</button>
+    <div class="level-play-badge" id="level-badge-patient" aria-label="Current level"></div>
+    <div class="ps-title" id="ps-screen-title">SELECT ORGAN</div>
+    <div class="level1-streak-badge" id="level1-streak-bar" style="display:none">🔥 Streak: <span id="level1-streak-count">0</span></div>
+    <div class="ps-topbar-health patient-health-bar" id="ps-topbar-health" aria-label="Patient health">
+      <span class="health-label">❤️</span>
+      <div class="health-track health-track--mobile"><div class="health-fill" id="health-bar-fill-m-p" style="width:0%"></div></div>
+      <span class="health-pct" id="health-percent-m-p">0%</span>
+    </div>
+    <div class="score-badge" title="Total score across all completed levels">🌟 Overall <span class="score-display">0</span></div>
+  </div>
+
+  <div class="ps-main">
+    <!-- Left: Patient Info -->
+    <div class="ps-left">
+      <div class="l1-mobile-sheet-header" id="l1-mobile-left-header">
+        <span class="l1-mobile-sheet-title" id="l1-mobile-left-title">Symptom clue</span>
+        <button type="button" class="l1-mobile-sheet-close" onclick="closeL1MobilePopups()" aria-label="Close popup">✕</button>
+      </div>
+      <div class="ps-patient-card">
+        <div class="ps-patient-img">
+          <img src="images/patient_boy.png" style="width:100%;height:100%;object-fit:contain;"/>
+        </div>
+        <div class="ps-patient-name">Patient Condition</div>
+      </div>
+      <div class="ps-symptoms-box" id="ps-symptoms-box">
+        <div class="ps-sym-title">Symptoms</div>
+        <ul id="symptom-list"></ul>
+      </div>
+      <div class="ps-hint-box" id="ps-general-hint">
+        Multiple systems affected — select an organ to investigate
+      </div>
+      <div class="level1-challenge-box" id="level1-challenge" style="display:none">
+        <p class="level1-symptom-label">Symptom clue (one organ only):</p>
+        <p id="level1-symptom-text" class="level1-symptom-text"></p>
+        <div id="level1-answer-feedback" class="level1-answer-feedback" role="status" aria-live="polite"></div>
+        <button type="button" class="level1-next-btn" id="level1-next-btn" style="display:none" onclick="onLevel1NextQuestion()">Next Question →</button>
+      </div>
+      <div class="level1-guidelines-wrap" id="level1-guidelines-wrap" style="display:none">
+        <button type="button" class="level1-guidelines-toggle" id="level1-guidelines-toggle"
+          aria-expanded="false" aria-controls="level1-guidelines"
+          onclick="toggleLevel1Guidelines()">
+          <span class="level1-guidelines-toggle-label">📋 What to do in Level 1</span>
+          <span class="level1-guidelines-toggle-icon" aria-hidden="true">▼</span>
+        </button>
+        <div class="level1-guidelines level1-guidelines-panel hidden" id="level1-guidelines" aria-label="Level 1 instructions">
+          <ol class="level1-guidelines-list">
+            <li>Read the <strong>symptom clue</strong> above — it points to <strong>one organ only</strong>.</li>
+            <li><strong>Click</strong> the organ on the body map that matches the clue.</li>
+            <li>Each correct pick adds <strong>+4</strong> to your score and increases your <strong>🔥 streak</strong> by 1.</li>
+            <li>A wrong pick costs <strong>−1</strong> point, resets your streak to 0, and all identified organs become unidentified again.</li>
+            <li>Wrong questions return to the pool until you answer them correctly.</li>
+            <li>After each answer, tap <strong>Next Question</strong> for another random clue.</li>
+            <li>Identify <strong>all 10 organs</strong> with a <strong>10-streak</strong> within <strong>30 attempts</strong> to complete Level 1 and unlock Level 2.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center: Body Diagram -->
+    <div class="ps-center">
+      <div id="l1-mobile-question-above" class="l1-mobile-question-above" aria-label="Current question"></div>
+      <div class="ps-body-wrap">
+        <img id="ps-body-img" class="ps-body-base" src="images/human_body_3d.png" alt="Human body outline" style="width:100%;height:100%;object-fit:contain;"/>
+        <!-- Single clickable organ markers (image + info + identification) -->
+        <div id="body-map"></div>
+      </div>
+      <div class="ps-body-hint" id="ps-body-hint">Click a highlighted organ to begin</div>
+    </div>
+
+    <!-- Right: Organ List -->
+    <div class="ps-right">
+      <div class="l1-mobile-sheet-header" id="l1-mobile-progress-header">
+        <span class="l1-mobile-sheet-title">PROGRESS</span>
+        <button type="button" class="l1-mobile-sheet-close" onclick="closeL1MobilePopups()" aria-label="Close popup">✕</button>
+      </div>
+      <div class="l1-mobile-progress-card" id="l1-mobile-progress-card" aria-label="Organ identification progress">
+        <div class="l1-mobile-progress-card-ecg" aria-hidden="true">
+          <svg viewBox="0 0 320 48" preserveAspectRatio="none">
+            <path d="M0 24 L40 24 L52 8 L64 40 L76 24 L120 24 L132 14 L144 34 L156 24 L200 24 L212 10 L224 38 L236 24 L320 24" fill="none" stroke="rgba(46,213,115,0.35)" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="l1-mobile-progress-ring-wrap">
+          <svg class="l1-mobile-progress-ring" viewBox="0 0 200 200" aria-hidden="true">
+            <circle class="l1-progress-ring-track-outer" cx="100" cy="100" r="92" fill="none"/>
+            <circle class="l1-progress-ring-track" cx="100" cy="100" r="82" fill="none"/>
+            <circle class="l1-progress-ring-fill" id="l1-progress-ring-fill" cx="100" cy="100" r="82" fill="none"
+              stroke-dasharray="0 515.22" stroke-dashoffset="0"/>
+          </svg>
+          <div class="l1-mobile-progress-ring-center">
+            <div class="l1-progress-ring-pct" id="l1-progress-ring-pct">0%</div>
+            <div class="l1-progress-ring-count" id="l1-progress-ring-count">0 OF 10</div>
+            <div class="l1-progress-ring-label">ORGANS IDENTIFIED</div>
+          </div>
+        </div>
+      </div>
+      <div class="l1-mobile-progress-encourage" id="l1-mobile-progress-encourage">
+        <span class="l1-progress-encourage-icon" aria-hidden="true">🏆</span>
+        <div class="l1-mobile-progress-encourage-text">
+          <div class="l1-progress-encourage-title" id="l1-progress-encourage-title">KEEP GOING!</div>
+          <div class="l1-progress-encourage-sub" id="l1-progress-encourage-sub">You're doing great!</div>
+        </div>
+      </div>
+      <div class="ps-organ-list-title" id="ps-organ-list-title">SELECT ORGAN</div>
+      <div class="l1-organ-progress-wrap" id="l1-organ-progress-wrap">
+        <span class="l1-progress-label" id="l1-progress-label">PROGRESS:</span>
+        <div id="organ-sidebar"></div>
+      </div>
+      <div class="level1-stats-wrap" id="level1-stats-wrap" style="display:none" aria-label="Level 1 run stats">
+        <div class="level1-run-stats-row" id="level1-run-stats-row" aria-label="Level 1 score and streak">
+          <div class="level1-big-streak" id="level1-big-streak" aria-label="Current streak">
+            <span class="level1-big-streak-icon" aria-hidden="true">🔥</span>
+            <div class="level1-big-streak-body">
+              <span class="level1-big-streak-label">Streak</span>
+              <span class="level1-big-streak-val" id="level1-big-streak-count">0</span>
+            </div>
+          </div>
+          <div class="level1-big-score" id="level1-big-score" aria-label="Total score">
+            <span class="level1-big-score-icon" aria-hidden="true">🌟</span>
+            <div class="level1-big-score-body">
+              <span class="level1-big-score-label">Score</span>
+              <span class="level1-big-score-val" id="level1-big-score-count">0</span>
+            </div>
+          </div>
+        </div>
+        <div class="level1-attempts-row" id="level1-attempts-row" aria-label="Attempts used">
+          <span class="level1-attempts-label">Attempts:</span>
+          <span class="level1-attempts-val" id="level1-attempts-hud" aria-live="polite">0/30</span>
+        </div>
+      </div>
+      <div class="ps-health-wrap patient-health-bar" id="ps-health-wrap">
+        <div class="ps-health-label">
+          <span>❤️ Patient Health</span>
+          <span id="health-percent-s" style="color:#ff4757">0%</span>
+        </div>
+        <div class="health-track full"><div class="health-fill" id="health-bar-fill-s" style="width:0%"></div></div>
+        <div class="health-track" style="display:none"><div class="health-fill" id="health-bar-fill-p" style="width:0%"></div></div>
+        <span id="health-percent-p" style="display:none">0%</span>
+      </div>
+      <div class="organs-cleared-row" id="organs-cleared-row">
+        <span id="organs-cleared-label">Organs cleared:</span>
+        <span id="organs-cleared-count" style="color:var(--green);font-weight:700;">0 / 10</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="l1-mobile-backdrop" class="l1-mobile-backdrop hidden" onclick="closeL1MobilePopups()" aria-hidden="true"></div>
+
+  <!-- Level 1 phone chrome: clue preview + progress (reparented on mobile) -->
+  <div id="l1-mobile-chrome" class="l1-mobile-chrome hidden" aria-label="Level 1 mobile controls">
+    <button type="button" class="l1-mobile-clue-strip" id="l1-mobile-clue-strip"
+      onclick="setL1MobilePanel('clue')" aria-label="Open full symptom clue">
+      <span class="l1-mobile-clue-strip-badge" id="l1-mobile-questions-badge"></span>
+      <div class="l1-mobile-clue-strip-body">
+        <span class="l1-mobile-clue-strip-label">Symptom clue</span>
+        <p class="l1-mobile-clue-preview" id="l1-mobile-clue-preview"></p>
+      </div>
+      <span class="l1-mobile-clue-strip-chevron" aria-hidden="true">▲</span>
+    </button>
+    <div class="l1-mobile-stats-bar" id="l1-mobile-stats-bar" aria-label="Level progress">
+      <div class="l1-mobile-stat l1-mobile-stat--streak">
+        <span class="l1-mobile-stat-icon" aria-hidden="true">🔥</span>
+        <span class="l1-mobile-stat-val" id="l1-mobile-streak-val">0</span>
+        <span class="l1-mobile-stat-label">Streak</span>
+      </div>
+      <div class="l1-mobile-stat l1-mobile-stat--score">
+        <span class="l1-mobile-stat-icon" aria-hidden="true">🌟</span>
+        <span class="l1-mobile-stat-val" id="l1-mobile-score-val">0</span>
+        <span class="l1-mobile-stat-label">Score</span>
+      </div>
+      <div class="l1-mobile-stat l1-mobile-stat--identified">
+        <span class="l1-mobile-stat-label">Identified</span>
+        <span class="l1-mobile-stat-val" id="l1-mobile-identified-val">0 / 10</span>
+      </div>
+    </div>
+    <div class="l1-mobile-attempts-row" id="l1-mobile-attempts-row" aria-label="Attempts used">
+      <span class="l1-mobile-attempts-label">Attempts:</span>
+      <span class="l1-mobile-attempts-val" id="l1-mobile-attempts-hud" aria-live="polite">0/30</span>
+    </div>
+    <p class="l1-mobile-gesture-hint">Tap organ for info · double-tap to answer</p>
+  </div>
+
+  <!-- Level 1 phone navigation (shown only on small screens via level1-mobile.css) -->
+  <nav id="l1-mobile-nav" class="l1-mobile-nav hidden" aria-label="Level 1 mobile navigation">
+    <button type="button" class="l1-mobile-nav-btn l1-mobile-nav-btn--active" data-l1-panel="clue"
+      onclick="setL1MobilePanel('clue')">
+      <span class="l1-mobile-nav-icon" aria-hidden="true">🔍</span>
+      <span class="l1-mobile-nav-label">Clue</span>
+    </button>
+    <button type="button" class="l1-mobile-nav-btn" data-l1-panel="progress"
+      onclick="setL1MobilePanel('progress')">
+      <span class="l1-mobile-nav-icon" aria-hidden="true">📊</span>
+      <span class="l1-mobile-nav-label">Progress</span>
+    </button>
+    <button type="button" class="l1-mobile-nav-btn" data-l1-panel="help"
+      onclick="setL1MobilePanel('help')">
+      <span class="l1-mobile-nav-icon" aria-hidden="true">📋</span>
+      <span class="l1-mobile-nav-label">Help</span>
+    </button>
+  </nav>
+</div>
+
+<!-- SCREEN: COMPLETE -->
+<div class="screen level-complete-screen" data-screen="complete" id="screen-complete">
+  <div class="level-complete-bg level-complete-bg--2" aria-hidden="true"></div>
+  <div class="level-complete-scroll">
+    <div class="level-complete-panel level-complete-panel--1 level-complete-panel--l1-result">
+      <div class="level-complete-hero level-complete-hero--compact">
+        <div class="level-complete-badge level-complete-badge--1" aria-hidden="true">🏆</div>
+        <h1 class="healed-title level-complete-title" id="complete-main-title">🏆 All Levels Complete!</h1>
+        <p class="healed-message level-complete-sub" id="complete-main-sub">Outstanding work! You completed all four levels!</p>
+      </div>
+      <div class="l1-result-dashboard" aria-label="Final results">
+        <div class="l1-result-row l1-result-row--three">
+          <div class="stat-card stat-card-score"><div class="stat-val" id="final-score-display">0</div><div class="stat-label">🌟 Combined Score</div></div>
+          <div class="stat-card stat-card-streak"><div class="stat-val" id="final-grade-display">A+</div><div class="stat-label">🎓 Overall Grade</div></div>
+          <div class="stat-card stat-card-attempts"><div class="stat-val" id="final-streak-display">0</div><div class="stat-label">🔥 Best Streak</div></div>
+        </div>
+      </div>
+      <div class="level-complete-actions level-complete-actions--compact">
+        <button class="btn-continue" onclick="restartGame()">🔄 Play Again</button>
+        <button class="btn-menu" onclick="showMyProgress()">📊 My Progress</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN: MY PROGRESS (personal learning — no competition) -->
+<div class="screen" data-screen="progress" id="screen-progress">
+  <div class="lb-bg-glow"></div>
+  <div class="lb-bg-decor" aria-hidden="true">
+    <span class="lb-bg-dna">🧬</span>
+    <span class="lb-bg-body">🫀</span>
+  </div>
+  <div class="game-header lb-game-header">
+    <div class="header-logo">🫀 BODY QUEST</div>
+    <button class="btn-back-small" onclick="backFromProgress()">← Back</button>
+  </div>
+  <div class="centered-content lb-centered">
+    <div class="lb-content">
+      <div class="lb-header">
+        <div class="lb-trophy-ring">📚</div>
+        <div class="lb-title">My Learning Progress</div>
+        <div class="lb-sub">Your scores saved in this browser — for self-study only</div>
+        <div class="lb-divider" aria-hidden="true"><span class="lb-divider-line"></span><span class="lb-divider-diamond"></span><span class="lb-divider-line"></span></div>
+      </div>
+      <div id="progress-list"><div class="lb-loading">Loading progress...</div></div>
+      <button type="button" class="btn-primary lb-back-btn" onclick="backFromProgress()">← BACK</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN: HOW TO PLAY -->
+<div class="screen" data-screen="howtoplay" id="screen-howtoplay">
+  <div class="game-header">
+    <div class="header-logo">🫀 BODY QUEST</div>
+    <button class="btn-back-small" onclick="backToMenu()">← Back</button>
+  </div>
+  <div class="centered-content">
+    <div class="htp-content">
+      <div class="htp-title">📖 How to Play</div>
+      <div class="htp-step"><div class="htp-num">1</div><div class="htp-text"><strong>Four Progressive Levels</strong><span>Complete Level 1 to unlock Level 2, then Levels 3 and 4. You cannot skip ahead — finish each level before the next one opens. Progress saves automatically; use Resume on the level screen to continue.</span></div></div>
+      <div class="htp-step"><div class="htp-num">2</div><div class="htp-text"><strong>Level 1 — Organ Functions</strong><span>Read one organ function at a time and click the matching organ on the body map. Correct picks add +4 points and build your streak; wrong picks cost −1 point, reset your streak to 0, and make all organs unidentified again. Reach a 10-streak and identify all 10 organs within 30 attempts to unlock Level 2.</span></div></div>
+      <div class="htp-step"><div class="htp-num">3</div><div class="htp-text"><strong>Level 2 — Disease Matching</strong><span>Same body-map format: read a disease name and click the organ it affects. Same streak rules as Level 1 (+4 correct, −1 wrong, 10-streak pass, 30 attempts).</span></div></div>
+      <div class="htp-step"><div class="htp-num">4</div><div class="htp-text"><strong>Level 3 — Food Matching</strong><span>Same body-map format: read a healing food with its hint, then click the organ that benefits most. Same streak rules as Level 1.</span></div></div>
+      <div class="htp-step"><div class="htp-num">5</div><div class="htp-text"><strong>Level 4 — Symptom Matching</strong><span>Same body-map format: read a patient symptom and click the affected organ. Same streak rules as Level 1. Finish all four levels to complete the game.</span></div></div>
+      <div class="htp-step"><div class="htp-num">6</div><div class="htp-text"><strong>Finish &amp; Track Progress</strong><span>After Level 4 you see your results and total score. My Progress shows your own level scores so you can review and improve — there is no competition with others.</span></div></div>
+      <div class="scoring-table">
+        <div class="scoring-title">🏆 Scoring (All Levels)</div>
+        <div class="scoring-row"><span>Correct organ pick</span><span class="pts">+4 pts</span></div>
+        <div class="scoring-row"><span>Wrong organ pick</span><span class="pts">−1 pt</span></div>
+        <div class="scoring-row"><span>Pass requirement</span><span class="pts">10-streak + all 10 organs</span></div>
+        <div class="scoring-row"><span>Max attempts per level</span><span class="pts">30</span></div>
+      </div>
+      <button class="btn-primary" onclick="backToMenu()" style="margin-top:20px;">Let's Go! 🚀</button>
+    </div>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="data/organs-shared-data.js"></script>
+<script src="data/organs-shared.js"></script>
+<script src="data/organs-qa-data.js"></script>
+<script src="data/organs-qa-loader.js"></script>
+<script src="data/map-click-challenges.js"></script>
+<script src="organs.js"></script>
+<script src="js/state.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/gamedata.js"></script>
+<script src="js/persistence.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/screens/level-select.js"></script>
+<script src="js/body-map.js"></script>
+<script src="js/levels/map-click.js"></script>
+<script src="js/ui/toast.js"></script>
+<script src="js/ui/confetti.js"></script>
+<script src="js/init.js"></script>
+</body>
+</html>

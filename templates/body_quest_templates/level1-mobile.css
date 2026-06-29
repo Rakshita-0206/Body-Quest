@@ -1,0 +1,1284 @@
+/* ══════════════════════════════════════════════════════════════
+   LEVEL 1 — PHONE-ONLY LAYOUT (max-width: 768px)
+   Desktop / tablet Level 1 (769px+) uses style.css — unchanged.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Pre-paint guard (no JS class needed) ─────────────────────
+   html.is-mobile-vp is stamped synchronously by viewport-normalize.js
+   while the browser is still parsing <head>, before any layout or
+   paint. This means these rules are active on the very first render,
+   eliminating the flash of desktop layout on mobile.
+
+   The full mobile UI (reparented DOM nodes, bottom-nav, etc.) still
+   requires the JS-driven .level-1-mobile class, but these rules ensure
+   the initial skeleton is never painted with desktop proportions.
+   ─────────────────────────────────────────────────────────────── */
+html.is-mobile-vp #screen-patient.level-1-play.active {
+  /* Override the desktop grid layout before JS adds .level-1-mobile */
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  overflow: hidden !important;
+}
+
+/* Suppress the desktop three-column grid on mobile before JS runs */
+html.is-mobile-vp #screen-patient.level-1-play .ps-main {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 6px !important;
+  gap: 0 !important;
+}
+
+/* Hide desktop-only side panels before JS syncs the layout */
+html.is-mobile-vp #screen-patient.level-1-play .ps-left,
+html.is-mobile-vp #screen-patient.level-1-play .ps-right {
+  display: none !important;
+}
+
+/* Once JS applies .level-1-mobile the above rules become redundant
+   and the full @media block below takes over — no conflict. */
+
+
+@media (max-width: 768px) {
+
+  /* .active required — without it display:flex overrides .screen { display:none } */
+  #screen-patient.level-1-play.level-1-mobile.active {
+    --l1-mobile-nav-h: calc(56px + env(safe-area-inset-bottom, 0px));
+    --l1-mobile-chrome-h: calc(152px + env(safe-area-inset-bottom, 0px));
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Compact top bar ── */
+  #screen-patient.level-1-play.level-1-mobile .ps-topbar {
+    padding: 4px 10px;
+    gap: 6px;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    min-height: 40px;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .ps-title {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    color: #c8e8ff;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .level-play-badge {
+    padding: 4px 10px;
+    flex-shrink: 0;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .level-play-badge .level-badge-main {
+    font-size: 0.74rem;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .level-play-badge .level-badge-name {
+    font-size: 0.64rem;
+    color: #b8f5d8;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .btn-menu-nav {
+    padding: 8px 12px;
+    font-size: 0.76rem;
+    min-height: 40px;
+  }
+
+  /* ── Anatomy hero ── */
+  #screen-patient.level-1-play.level-1-mobile .ps-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    padding: 0 6px 0;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .ps-center {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: var(--l1-mobile-chrome-h);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .ps-body-wrap {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 4px 10px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile #body-map {
+    padding: 0 4px;
+    --l1-mobile-wrap-shift: 27;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .ps-body-hint {
+    display: none;
+  }
+
+  /* ── Question panels above anatomy (patient + clue) ── */
+  .l1-mobile-question-above {
+    display: none;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-shrink: 0;
+    width: 100%;
+    padding: 0 6px 4px;
+    margin-top: 0;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 12;
+    max-height: min(42dvh, 320px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above .ps-patient-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    margin: 0;
+    flex-shrink: 0;
+    border-color: rgba(77, 255, 181, 0.35);
+    background: linear-gradient(160deg, rgba(8, 28, 24, 0.95), rgba(6, 16, 28, 0.98));
+    box-shadow: 0 0 16px rgba(77, 255, 181, 0.1);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above .ps-patient-img {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    margin: 0;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above .ps-patient-name {
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    color: #6ee8ff;
+    text-align: left;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above .level1-challenge-box {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 10px 12px 8px;
+    overflow: visible;
+    position: relative;
+    z-index: 13;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above .level1-symptom-label {
+    font-size: 0.66rem;
+    color: #ffd54a;
+    margin-bottom: 4px;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above .level1-symptom-text {
+    font-size: 0.92rem;
+    line-height: 1.45;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above .level1-answer-feedback {
+    font-size: 0.84rem;
+    padding: 10px 12px;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above .level1-next-btn {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+    min-height: 46px;
+    margin-top: 8px;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-awaiting-next .l1-mobile-question-above .level1-answer-feedback.is-visible {
+    animation: l1-mobile-sheet-in 0.26s ease;
+  }
+
+  /* ── Fixed chrome: stats + progress (above nav) ── */
+  .l1-mobile-chrome {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: var(--l1-mobile-nav-h);
+    z-index: 66;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: linear-gradient(180deg, rgba(4, 10, 22, 0.72), rgba(4, 10, 22, 0.98));
+    border-top: 1px solid rgba(77, 255, 181, 0.2);
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.45);
+  }
+
+  .l1-mobile-chrome.hidden {
+    display: none !important;
+  }
+
+  .l1-mobile-clue-strip {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 10px;
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid rgba(255, 200, 60, 0.2);
+    background: linear-gradient(155deg, rgba(42, 28, 6, 0.92), rgba(24, 16, 4, 0.96));
+    cursor: pointer;
+    text-align: left;
+    min-height: 48px;
+    transition: var(--tr);
+  }
+
+  .l1-mobile-clue-strip:active {
+    background: linear-gradient(155deg, rgba(52, 34, 8, 0.95), rgba(30, 20, 6, 0.98));
+  }
+
+  .l1-mobile-clue-strip-badge {
+    flex-shrink: 0;
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #b8d8f0;
+    background: rgba(0, 184, 255, 0.14);
+    border: 1px solid rgba(0, 184, 255, 0.35);
+    border-radius: 999px;
+    padding: 4px 8px;
+    white-space: nowrap;
+  }
+
+  .l1-mobile-clue-strip-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .l1-mobile-clue-strip-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffd54a;
+    margin-bottom: 2px;
+  }
+
+  .l1-mobile-clue-preview {
+    font-size: 0.84rem;
+    line-height: 1.35;
+    color: #fff8e8;
+    font-weight: 600;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .l1-mobile-clue-strip-chevron {
+    flex-shrink: 0;
+    font-size: 0.55rem;
+    color: #ffe566;
+    opacity: 0.85;
+  }
+
+  .l1-mobile-stats-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 6px 12px;
+    border-bottom: 1px solid rgba(77, 255, 181, 0.12);
+    background: rgba(6, 14, 28, 0.88);
+    min-height: 36px;
+  }
+
+  .l1-mobile-stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+  }
+
+  .l1-mobile-stat--streak,
+  .l1-mobile-stat--score {
+    flex-shrink: 0;
+  }
+
+  .l1-mobile-stat--score .l1-mobile-stat-val {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.35);
+  }
+
+  .l1-mobile-stat--identified {
+    flex: 1;
+    justify-content: flex-end;
+    min-width: 0;
+  }
+
+  .l1-mobile-stat-icon {
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  .l1-mobile-stat-val {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #ffe566;
+    letter-spacing: 0.04em;
+  }
+
+  .l1-mobile-stat--identified .l1-mobile-stat-val {
+    color: #4dffb5;
+    text-shadow: 0 0 10px rgba(77, 255, 181, 0.35);
+  }
+
+  .l1-mobile-stat-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: #8ab4d4;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .l1-mobile-attempts-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 5px 12px 6px;
+    border-top: 1px solid rgba(77, 255, 181, 0.1);
+    background: rgba(6, 14, 28, 0.92);
+    min-height: 28px;
+  }
+
+  .l1-mobile-attempts-label {
+    font-family: var(--font-body);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8ab4d4;
+  }
+
+  .l1-mobile-attempts-val {
+    font-family: var(--font-body);
+    font-size: 0.76rem;
+    font-weight: 800;
+    color: #b8d8f0;
+    letter-spacing: 0.04em;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-organ-progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px 8px;
+    min-height: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(6, 14, 28, 0.95);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-progress-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #6ee8ff;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-shadow: 0 0 10px rgba(110, 232, 255, 0.35);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile #organ-sidebar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 2px 0;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile #organ-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-progress-organ {
+    width: 52px;
+    min-width: 52px;
+    min-height: 52px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 2px;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-progress-organ-icon {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-progress-organ-name {
+    font-size: 0.46rem;
+    font-weight: 700;
+    font-family: var(--font-body);
+    color: #c8dff5;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-align: center;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 48px;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-progress-organ--pending {
+    border-color: rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: none;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-progress-organ--found {
+    border-color: #2ed573;
+    background: rgba(46, 213, 115, 0.12);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-progress-organ--found .l1-progress-organ-name {
+    color: #4dffb5;
+  }
+
+  /* ── Backdrop (tap outside to close) ── */
+  .l1-mobile-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 190;
+    background: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+  }
+
+  .l1-mobile-backdrop:not(.hidden) {
+    display: block;
+  }
+
+  /* ── Sheet headers with close button ── */
+  .l1-mobile-sheet-header {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-shrink: 0;
+    padding: 2px 2px 8px;
+    border-bottom: 1px solid rgba(77, 255, 181, 0.18);
+    margin-bottom: 4px;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-help #l1-mobile-left-header,
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-progress #l1-mobile-progress-header {
+    display: flex;
+  }
+
+  .l1-mobile-sheet-title {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6ee8ff;
+    text-shadow: 0 0 10px rgba(110, 232, 255, 0.35);
+  }
+
+  .l1-mobile-sheet-close {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    border: 1.5px solid rgba(255, 255, 255, 0.28);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #f0f6ff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: var(--tr);
+  }
+
+  .l1-mobile-sheet-close:active {
+    transform: scale(0.94);
+    border-color: rgba(77, 255, 181, 0.55);
+    color: #4dffb5;
+  }
+
+  /* ── Bottom sheets (expanded panels) ── */
+  #screen-patient.level-1-play.level-1-mobile .ps-left.l1-active,
+  #screen-patient.level-1-play.level-1-mobile .ps-right {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: var(--l1-mobile-nav-h);
+    z-index: 72;
+    max-height: min(50dvh, 380px);
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(8, 18, 36, 0.98), rgba(4, 10, 22, 0.99));
+    border: 1px solid rgba(77, 255, 181, 0.3);
+    border-bottom: none;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6);
+    padding: 12px 14px 14px;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+    animation: l1-mobile-sheet-in 0.26s ease;
+  }
+
+  @keyframes l1-mobile-sheet-in {
+    from { transform: translateY(16px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-progress .ps-right,
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-help .ps-left.l1-active {
+    display: flex;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-progress .l1-mobile-chrome,
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-help .l1-mobile-chrome {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  /* Clue sheet */
+  #screen-patient.level-1-play.level-1-mobile .ps-left.l1-active .ps-patient-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    flex-shrink: 0;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .ps-left.l1-active .ps-patient-img {
+    width: 44px;
+    height: 44px;
+    margin: 0;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .ps-left.l1-active .ps-patient-name {
+    font-size: 0.66rem;
+    color: #6ee8ff;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .level1-challenge-box {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 10px 12px 8px;
+    margin-top: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .level1-symptom-label {
+    font-size: 0.68rem;
+    color: #ffd54a;
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .level1-symptom-text {
+    font-size: 1.02rem;
+    line-height: 1.5;
+    color: #fff8e8;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    flex: 0 0 auto;
+    overflow: visible;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .level1-next-btn {
+    font-size: 0.92rem;
+    padding: 14px 16px;
+    min-height: 48px;
+    margin-top: 10px;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .level1-answer-feedback {
+    font-size: 0.88rem;
+    padding: 10px 12px;
+    line-height: 1.45;
+  }
+
+  /* Help sheet */
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-help .ps-left.l1-active .ps-patient-card,
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-help .ps-left.l1-active .level1-challenge-box {
+    display: none !important;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-help .level1-guidelines-wrap {
+    display: flex !important;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-help .level1-guidelines-toggle {
+    display: none;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-help .level1-guidelines-panel {
+    display: block !important;
+    flex: 1;
+    min-height: 0;
+    max-height: none !important;
+    overflow-y: auto;
+    padding: 12px;
+    color: #dceeff;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .level1-guidelines-list {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: #dceeff;
+  }
+
+  /* Progress sheet — stats only (organ track stays in chrome) */
+  #screen-patient.level-1-play.level-1-mobile .ps-organ-list-title {
+    display: none;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .ps-right .l1-organ-progress-wrap {
+    display: none !important;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .level1-stats-wrap {
+    display: none !important;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .level1-run-stats-row {
+    display: none !important;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .level1-big-streak {
+    margin-top: 0;
+    padding: 12px 14px;
+    flex-shrink: 0;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .level1-big-streak-val {
+    font-size: 2rem;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .organs-cleared-row {
+    font-size: 0.88rem;
+    padding: 10px 12px;
+    color: #c8e0ff;
+  }
+
+  /* Mobile progress sheet — circular ring card (reference UI) */
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-progress .ps-right {
+    padding: 14px 14px 16px;
+    gap: 10px;
+    max-height: min(58dvh, 420px);
+    overflow: hidden;
+    border-color: rgba(0, 184, 255, 0.38);
+    background:
+      linear-gradient(165deg, rgba(6, 16, 34, 0.99), rgba(3, 8, 18, 1)),
+      repeating-linear-gradient(0deg, rgba(0, 184, 255, 0.035) 0 1px, transparent 1px 22px),
+      repeating-linear-gradient(90deg, rgba(0, 184, 255, 0.035) 0 1px, transparent 1px 22px);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(0, 184, 255, 0.12);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-progress .l1-mobile-sheet-header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    flex-shrink: 0;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-progress #l1-mobile-progress-header .l1-mobile-sheet-title {
+    font-size: 0.78rem;
+    color: #00d4ff;
+    letter-spacing: 0.14em;
+    text-shadow: 0 0 12px rgba(0, 212, 255, 0.45);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-progress .l1-mobile-progress-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    position: relative;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-progress .l1-mobile-progress-encourage {
+    display: flex;
+    flex-shrink: 0;
+    margin-top: auto;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-progress .organs-cleared-row,
+  #screen-patient.level-1-play.level-1-mobile.l1-mobile-show-progress .ps-health-wrap {
+    display: none !important;
+  }
+
+  .l1-mobile-progress-card-ecg {
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 42%;
+    transform: translateY(-50%);
+    height: 40px;
+    pointer-events: none;
+    opacity: 0.55;
+    z-index: 0;
+  }
+
+  .l1-mobile-progress-card-ecg svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .l1-mobile-progress-ring-wrap {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(220px, 62vw);
+    height: min(220px, 62vw);
+    max-height: min(220px, 30dvh);
+    margin: 0 auto;
+    flex-shrink: 1;
+    min-height: 0;
+  }
+
+  .l1-mobile-progress-ring {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+
+  .l1-progress-ring-track-outer {
+    stroke: rgba(0, 184, 255, 0.12);
+    stroke-width: 1.5;
+  }
+
+  .l1-progress-ring-track {
+    stroke: rgba(0, 184, 255, 0.22);
+    stroke-width: 3;
+  }
+
+  .l1-progress-ring-fill {
+    stroke: #2ed573;
+    stroke-width: 10;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 8px rgba(46, 213, 115, 0.85)) drop-shadow(0 0 16px rgba(46, 213, 115, 0.45));
+    transition: stroke-dasharray 0.45s ease;
+  }
+
+  .l1-mobile-progress-ring-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 12px;
+    pointer-events: none;
+  }
+
+  .l1-progress-ring-pct {
+    font-family: var(--font-body);
+    font-size: clamp(2.4rem, 11vw, 3rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    margin-bottom: 6px;
+  }
+
+  .l1-progress-ring-count {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 4.2vw, 1.15rem);
+    font-weight: 800;
+    color: #4dffb5;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    text-shadow: 0 0 12px rgba(77, 255, 181, 0.35);
+  }
+
+  .l1-progress-ring-label {
+    font-family: var(--font-body);
+    font-size: clamp(0.58rem, 2.6vw, 0.68rem);
+    font-weight: 600;
+    color: #8ab4d4;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .l1-mobile-progress-encourage {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 184, 255, 0.22);
+    background: rgba(0, 18, 38, 0.82);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 4px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  .l1-progress-encourage-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(46, 213, 115, 0.45);
+    background: rgba(46, 213, 115, 0.12);
+    font-size: 1.1rem;
+    box-shadow: 0 0 14px rgba(46, 213, 115, 0.2);
+  }
+
+  .l1-progress-encourage-title {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #4dffb5;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+
+  .l1-progress-encourage-sub {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: #b8d4f0;
+    line-height: 1.3;
+  }
+
+  /* ── Organ nodes: icon + name head, then Info / Select row ── */
+  #screen-patient.level-1-play.level-1-mobile .body-hotspot-wrap--mobile {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 6px;
+    width: 112px;
+    max-width: 112px;
+    pointer-events: none;
+    /* Shift aligns connector with organ head row center */
+    transform: translate(-50%, calc(-50% - 27px)) scale(var(--body-hotspot-fit-scale, 1));
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .body-hotspot-wrap--mobile .hotspot-organ-head {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    min-height: 44px;
+    padding: 4px 6px 4px 4px;
+    border-width: 2px;
+    border-radius: 12px;
+    background: rgba(4, 14, 32, 0.96);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.06),
+      0 3px 12px rgba(0, 0, 0, 0.5),
+      0 0 14px color-mix(in srgb, var(--organ-color, #6ee8ff) 28%, transparent);
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .body-hotspot-wrap--mobile .hotspot-organ-head.identified {
+    background: rgba(20, 70, 45, 0.92);
+    box-shadow: 0 0 14px rgba(77, 255, 181, 0.35);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .body-hotspot-wrap--mobile .hotspot-organ-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    line-height: 1;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1.5px solid color-mix(in srgb, var(--organ-color, #6ee8ff) 55%, transparent);
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .body-hotspot-wrap--mobile .hotspot-organ-head.identified .hotspot-organ-icon {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #4dffb5;
+    border-color: rgba(77, 255, 181, 0.55);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .body-hotspot-wrap--mobile .hotspot-name-mobile {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--font-body);
+    font-size: 0.58rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #f0f6ff;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .body-hotspot-wrap--mobile .hotspot-organ-head.identified .hotspot-name-mobile {
+    color: #c8ffe0;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .hotspot-action-row--mobile {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    pointer-events: auto;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .hotspot-side-btn--mobile {
+    flex: 1 1 0;
+    min-width: 48px;
+    max-width: 52px;
+    min-height: 48px;
+    height: 48px;
+    border-radius: 12px;
+    padding: 4px 4px 3px;
+    gap: 1px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-width: 2px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .hotspot-side-btn--mobile.hotspot-side-btn--info {
+    background: linear-gradient(160deg, rgba(0, 90, 160, 0.95), rgba(0, 150, 220, 0.88));
+    border-color: rgba(110, 232, 255, 0.65);
+    color: #fff;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .hotspot-side-btn--mobile.hotspot-side-btn--select {
+    background: linear-gradient(160deg, rgba(0, 120, 65, 0.95), rgba(40, 200, 120, 0.9));
+    border-color: rgba(120, 255, 190, 0.6);
+    color: #fff;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .hotspot-side-btn--mobile .hotspot-btn-glyph {
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1;
+    font-family: var(--font-body);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .hotspot-side-btn--mobile .hotspot-btn-label {
+    display: block;
+    font-size: 0.52rem;
+    font-weight: 700;
+    font-family: var(--font-body);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .hotspot-side-btn--mobile:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    filter: grayscale(0.4);
+    box-shadow: none;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .hotspot-side-btn--mobile:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .hotspot-side-btn--mobile:focus-visible {
+    outline: 2px solid #ffe566;
+    outline-offset: 2px;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .body-map-line {
+    stroke-width: 0.5;
+    opacity: 0.65;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .body-map-line.identified {
+    opacity: 0.85;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .body-map-anchor {
+    opacity: 0.75;
+  }
+
+  /* ── Bottom navigation ── */
+  .l1-mobile-nav {
+    display: flex;
+    flex-shrink: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 80;
+    height: var(--l1-mobile-nav-h);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: linear-gradient(180deg, rgba(10, 22, 42, 0.98), rgba(4, 10, 22, 1));
+    border-top: 1px solid rgba(77, 255, 181, 0.32);
+    box-shadow: 0 -6px 28px rgba(0, 0, 0, 0.55);
+    gap: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .l1-mobile-nav.hidden {
+    display: none !important;
+  }
+
+  .l1-mobile-nav-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    min-height: 48px;
+    padding: 6px 4px;
+    border: none;
+    border-radius: 12px 12px 0 0;
+    background: transparent;
+    color: #8ab4d4;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: var(--tr);
+  }
+
+  .l1-mobile-nav-btn--active {
+    color: #4dffb5;
+    background: rgba(77, 255, 181, 0.12);
+    box-shadow: inset 0 2px 0 #4dffb5;
+  }
+
+  .l1-mobile-nav-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+
+  .l1-mobile-nav-label {
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ── Organ info floating card (matches desktop/laptop style) ── */
+  #screen-patient.level-1-play.level-1-mobile .organ-hover-card {
+    position: fixed !important;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: min(320px, calc(100vw - 24px));
+    max-width: min(320px, calc(100vw - 24px));
+    box-sizing: border-box;
+    border-radius: 14px;
+    padding: 16px 16px 14px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid color-mix(in srgb, var(--ohc-color, #00b8ff) 45%, rgba(255, 255, 255, 0.12));
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.55),
+      0 0 28px color-mix(in srgb, var(--ohc-color, #00b8ff) 25%, transparent);
+    background: linear-gradient(160deg, rgba(14, 26, 48, 0.98), rgba(8, 15, 32, 0.99));
+    transform: translateY(10px);
+    opacity: 0;
+    z-index: 200;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .organ-hover-card.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .organ-hover-card .ohc-section p,
+  #screen-patient.level-1-play.level-1-mobile .organ-hover-card .ohc-funcs {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .organ-hover-card .ohc-name {
+    font-size: 1.05rem;
+    margin: 0 36px 10px 0;
+    color: color-mix(in srgb, var(--ohc-color, #00b8ff) 55%, #fff);
+    text-shadow: 0 0 12px color-mix(in srgb, var(--ohc-color, #00b8ff) 40%, transparent);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .organ-hover-card .ohc-section {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .organ-hover-card .ohc-section strong {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    color: var(--blue);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .organ-hover-card .ohc-img {
+    width: 100%;
+    max-height: min(120px, 18dvh);
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border: 1px solid color-mix(in srgb, var(--ohc-color, #00b8ff) 35%, transparent);
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .ohc-select-btn--mobile,
+  #screen-patient.level-1-play.level-1-mobile .ohc-select-btn {
+    width: 100%;
+    padding: 12px 14px;
+    min-height: 44px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #00904f, #2ed573);
+    border: none;
+    color: #fff;
+    box-shadow: 0 0 18px rgba(46, 213, 115, 0.35);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .l1-mobile-attempts-row {
+    padding: 6px 12px 4px;
+  }
+
+  .l1-mobile-gesture-hint {
+    margin: 0;
+    padding: 5px 12px 8px;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #8eb4d8;
+    border-top: 1px solid rgba(110, 232, 255, 0.1);
+    background: rgba(0, 12, 28, 0.55);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .ohc-actions-hint {
+    font-size: 0.78rem;
+    color: #9bb8d9;
+    margin-top: 8px;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile.l1-organ-sheet-open .l1-mobile-chrome {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .organ-hover-card .ohc-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    min-height: 28px;
+    font-size: 0.95rem;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.35);
+    color: var(--text);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .organ-hover-card .ohc-badge {
+    font-size: 0.65rem;
+    padding: 5px 11px;
+    border-radius: 6px;
+    background: rgba(0, 184, 255, 0.1);
+    border: 1px solid rgba(0, 184, 255, 0.28);
+    color: var(--blue);
+  }
+
+  #screen-patient.level-1-play.level-1-mobile .organ-hover-card .ohc-actions {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}

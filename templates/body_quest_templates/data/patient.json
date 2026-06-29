@@ -1,0 +1,11 @@
+{
+  "patient": {
+    "name": "Rohan",
+    "age": 12,
+    "genericSymptoms": [
+      "feels unwell with several body systems affected",
+      "needs a doctor to investigate organ by organ",
+      "shows signs of multiple nutrient deficiencies"
+    ]
+  }
+}

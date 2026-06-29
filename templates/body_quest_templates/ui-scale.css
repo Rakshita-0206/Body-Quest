@@ -1,0 +1,203 @@
+/* ══════════════════════════════════════════════════════════════
+   UI SCALE — proportional enlargement for all screens
+   (loads after style.css; does not modify original design files)
+   Root font-size + --ui-scale are set by js/viewport-normalize.js
+   ══════════════════════════════════════════════════════════════ */
+
+:root {
+  --ui-scale: 1;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Desktop: use vh instead of dvh so layout matches across browsers */
+@media (min-width: 901px) {
+  body:has(#screen-patient.active),
+  body:has(#screen-game.active),
+  body:has(#screen-level-select.active),
+  body:has(.level-complete-screen.active) {
+    height: 100vh !important;
+    max-height: 100vh !important;
+  }
+
+  #screen-patient,
+  #screen-game,
+  #screen-level-select {
+    height: 100vh !important;
+    max-height: 100vh !important;
+  }
+}
+
+/* Organ info popup disabled — facts would reveal answers for later levels */
+.organ-hover-card {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* px-only typography → rem so it scales with the root */
+.name-input-wrap .input-icon { font-size: 1.06rem; }
+.footer-organ .f-icon { font-size: 1.06rem; }
+.lb-badge-complete,
+.lb-badge-playing { font-size: 0.75rem; }
+.ps-organ-card .ps-organ-icon { font-size: 1.15rem; }
+
+/* ── Desktop / laptop (901px+) ── */
+@media (min-width: 901px) {
+  .ps-main {
+    grid-template-columns: minmax(0, calc(300px * var(--ui-scale, 1))) minmax(0, 1fr) minmax(0, calc(340px * var(--ui-scale, 1)));
+    gap: calc(18px * var(--ui-scale, 1));
+    padding: calc(14px * var(--ui-scale, 1)) calc(18px * var(--ui-scale, 1));
+  }
+
+  .game-layout {
+    grid-template-columns: minmax(0, calc(260px * var(--ui-scale, 1))) minmax(0, 1fr) minmax(0, calc(300px * var(--ui-scale, 1)));
+    gap: calc(18px * var(--ui-scale, 1));
+    padding: calc(14px * var(--ui-scale, 1)) calc(18px * var(--ui-scale, 1)) 0;
+  }
+
+  .menu-layout {
+    padding: calc(58px * var(--ui-scale, 1)) calc(20px * var(--ui-scale, 1)) calc(28px * var(--ui-scale, 1));
+  }
+
+  .game-logo { font-size: clamp(2.6rem, 5.5vw, 4.4rem); }
+  .ps-title { font-size: var(--type-xl); }
+  .header-logo { font-size: var(--type-lg); }
+  .panel-title { font-size: var(--type-xs); }
+  .btn-primary,
+  .btn-menu-secondary,
+  .btn-menu-nav { font-size: var(--type-base); }
+
+  /* Level 1 — wider columns + larger organ circles */
+  #screen-patient.level-1-play .ps-main {
+    grid-template-columns: minmax(0, calc(300px * var(--ui-scale, 1))) minmax(0, 1fr) minmax(0, calc(340px * var(--ui-scale, 1)));
+  }
+
+  #screen-patient.level-1-play .body-hotspot {
+    width: calc(76px * var(--ui-scale, 1));
+    height: calc(76px * var(--ui-scale, 1));
+  }
+
+  #screen-patient.level-1-play .body-hotspot-wrap .body-hotspot {
+    width: calc(68px * var(--ui-scale, 1));
+    height: calc(68px * var(--ui-scale, 1));
+  }
+
+  #screen-patient.level-1-play .body-hotspot .hotspot-label { font-size: var(--type-3xs); }
+  #screen-patient.level-1-play .body-hotspot .hotspot-name {
+    font-size: var(--type-2xs);
+    line-height: 1.18;
+    -webkit-line-clamp: 3;
+  }
+  #screen-patient.level-1-play .ps-organ-card--l1 .ps-organ-name {
+    font-size: var(--type-sm);
+    line-height: 1.25;
+    letter-spacing: .02em;
+  }
+  #screen-patient.level-1-play .ps-organ-list-title { font-size: var(--type-sm); }
+  #screen-patient.level-1-play .level1-symptom-label { font-size: var(--type-xs); }
+  #screen-patient.level-1-play .level1-symptom-text {
+    font-size: var(--type-md);
+    line-height: 1.5;
+    padding: 12px 14px;
+  }
+  #screen-patient.level-1-play .organs-cleared-row { font-size: var(--type-sm); }
+  #screen-patient.level-1-play .ps-body-hint { font-size: var(--type-base); }
+
+  #screen-patient.level-1-play .level1-guidelines-toggle {
+    font-size: var(--type-sm);
+  }
+
+  #screen-patient.level-1-play .level1-guidelines-list {
+    font-size: var(--type-base);
+  }
+
+  #screen-patient.level-1-play .level-play-badge .level-badge-main { font-size: var(--type-2xl); }
+  #screen-patient.level-1-play .level-play-badge .level-badge-name { font-size: var(--type-base); }
+  #screen-patient.level-1-play .ps-title { font-size: var(--type-xl); }
+  #screen-patient.level-1-play .level1-big-streak-label,
+  #screen-patient.level-1-play .level1-big-score-label { font-size: var(--type-xs); }
+  #screen-patient.level-1-play .level1-answer-feedback,
+  #screen-patient.level-1-play .level1-next-btn { font-size: var(--type-base); }
+
+  /* Level 1 — compact organ info card (desktop) */
+  #screen-patient.level-1-play:not(.level-1-mobile) .organ-hover-card {
+    padding: 10px 12px 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5),
+      0 0 20px color-mix(in srgb, var(--ohc-color, #00b8ff) 18%, transparent);
+  }
+
+  #screen-patient.level-1-play:not(.level-1-mobile) .organ-hover-card .ohc-name {
+    font-size: 0.92rem;
+    margin: 0 28px 6px 0;
+  }
+
+  #screen-patient.level-1-play:not(.level-1-mobile) .organ-hover-card .ohc-img {
+    max-height: min(88px, 14dvh);
+    margin-bottom: 8px;
+    border-radius: 8px;
+  }
+
+  #screen-patient.level-1-play:not(.level-1-mobile) .organ-hover-card .ohc-section {
+    font-size: 0.72rem;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  #screen-patient.level-1-play:not(.level-1-mobile) .organ-hover-card .ohc-section strong {
+    font-size: 0.58rem;
+    margin-bottom: 2px;
+  }
+
+  #screen-patient.level-1-play:not(.level-1-mobile) .organ-hover-card .ohc-funcs {
+    font-size: 0.7rem;
+    margin-top: 4px;
+  }
+
+  #screen-patient.level-1-play:not(.level-1-mobile) .organ-hover-card .ohc-badge {
+    font-size: 0.6rem;
+    padding: 4px 8px;
+    margin-top: 4px;
+  }
+
+  #screen-patient.level-1-play:not(.level-1-mobile) .organ-hover-card .ohc-close {
+    width: 24px;
+    height: 24px;
+    top: 6px;
+    right: 8px;
+    font-size: 0.82rem;
+  }
+
+  /* Level 2 / 3 MCQ */
+  #screen-game.level-2-play .question-text { font-size: var(--type-lg); }
+  #screen-game.level-2-play .option-text { font-size: var(--type-base); }
+
+  /* Progress / complete screens */
+  .lb-title { font-size: 2rem; }
+  .complete-title { font-size: 2rem; }
+  .healed-title { font-size: 2.15rem; }
+}
+
+/* ── Tablet / narrow desktop (601px–900px) ── */
+@media (min-width: 601px) and (max-width: 900px) {
+  #screen-patient.level-1-play:not(.level-1-mobile) .body-hotspot .hotspot-label { font-size: var(--type-3xs); }
+  #screen-patient.level-1-play:not(.level-1-mobile) .body-hotspot .hotspot-name {
+    font-size: var(--type-xs);
+    -webkit-line-clamp: 3;
+    line-height: 1.18;
+  }
+  #screen-patient.level-1-play:not(.level-1-mobile) .ps-organ-card--l1 .ps-organ-name { font-size: var(--type-sm); }
+  #screen-patient.level-1-play:not(.level-1-mobile) .level1-symptom-text { font-size: var(--type-md); }
+  #screen-patient.level-1-play:not(.level-1-mobile) .ps-body-hint { font-size: var(--type-base); }
+}
+
+/* Typography: see typography.css (loads after this file) */

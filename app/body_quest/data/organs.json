@@ -1,0 +1,962 @@
+[
+  {
+    "id": "blood",
+    "name": "Blood",
+    "icon": "🩸",
+    "disease": "Anemia",
+    "nutrient": "Iron",
+    "color": "#c0392b",
+    "description": "Your blood does not have enough iron to carry oxygen to all parts of your body.",
+    "symptoms": [
+      "feels tired and weak easily",
+      "skin looks pale",
+      "gets dizzy sometimes"
+    ],
+    "steps": [
+      {
+        "type": "identify",
+        "question": "Rohan feels very tired and his skin looks pale. Which nutrient is he missing?",
+        "options": [
+          "Iron",
+          "Vitamin C",
+          "Calcium",
+          "Sugar"
+        ],
+        "correct": 0,
+        "explanation": "Iron is needed to make hemoglobin in red blood cells. Without iron, blood cannot carry enough oxygen, making you feel tired and pale."
+      },
+      {
+        "type": "food",
+        "question": "Which food will give Rohan the iron he needs to feel better?",
+        "options": [
+          {
+            "name": "Spinach",
+            "emoji": "🥬",
+            "image": "images/spinach.png",
+            "correct": true
+          },
+          {
+            "name": "Burger",
+            "emoji": "🍔",
+            "image": "images/burger.png",
+            "correct": false
+          },
+          {
+            "name": "Soda",
+            "emoji": "🥤",
+            "image": "images/soda.png",
+            "correct": false
+          },
+          {
+            "name": "Candy",
+            "emoji": "🍬",
+            "image": "images/candy.png",
+            "correct": false
+          }
+        ],
+        "correct": 0,
+        "explanation": "Spinach is one of the best plant sources of iron. Eating it regularly helps your blood carry oxygen properly."
+      },
+      {
+        "type": "reason",
+        "question": "Why does spinach help someone with anemia?",
+        "options": [
+          "It is rich in iron which helps make red blood cells",
+          "It has lots of sugar for energy",
+          "It makes your hair grow faster",
+          "It has Vitamin D for strong bones"
+        ],
+        "correct": 0,
+        "explanation": "Spinach contains iron, which is used by your body to make hemoglobin — the part of red blood cells that carries oxygen."
+      },
+      {
+        "type": "prevent",
+        "question": "How can you prevent anemia?",
+        "options": [
+          "Eat iron-rich foods like spinach, lentils, and beans every day",
+          "Sleep more than 12 hours a day",
+          "Drink more soda and sweet juices",
+          "Avoid eating green vegetables"
+        ],
+        "correct": 0,
+        "explanation": "Eating iron-rich foods daily keeps your blood healthy. Lentils, beans, leafy greens, and fortified cereals are all great sources of iron."
+      },
+      {
+        "type": "concept",
+        "question": "What is the job of hemoglobin in the blood?",
+        "options": [
+          "It carries oxygen from the lungs to all body parts",
+          "It digests the food we eat",
+          "It helps us see in the dark",
+          "It makes our bones strong"
+        ],
+        "correct": 0,
+        "explanation": "Hemoglobin is a special protein found in red blood cells. It picks up oxygen in the lungs and delivers it to every part of the body."
+      }
+    ]
+  },
+  {
+    "id": "eyes",
+    "name": "Eyes",
+    "icon": "👁️",
+    "disease": "Night Blindness",
+    "nutrient": "Vitamin A",
+    "color": "#f39c12",
+    "description": "Without enough Vitamin A, your eyes cannot adjust to see in dim or dark places.",
+    "symptoms": [
+      "cannot see well at night",
+      "eyes feel dry and scratchy",
+      "trouble seeing in dim light"
+    ],
+    "steps": [
+      {
+        "type": "identify",
+        "question": "Rohan cannot see well when the lights are dim. Which vitamin is he missing?",
+        "options": [
+          "Vitamin A",
+          "Vitamin B",
+          "Vitamin K",
+          "Vitamin E"
+        ],
+        "correct": 0,
+        "explanation": "Vitamin A is needed to make a substance called rhodopsin in the eyes, which helps us see in low light."
+      },
+      {
+        "type": "food",
+        "question": "Which food will help Rohan's eyes see better in the dark?",
+        "options": [
+          {
+            "name": "Carrots",
+            "emoji": "🥕",
+            "image": "images/carrots.png",
+            "correct": true
+          },
+          {
+            "name": "Chips",
+            "emoji": "🍟",
+            "image": "images/chips.png",
+            "correct": false
+          },
+          {
+            "name": "Ice Cream",
+            "emoji": "🍦",
+            "image": "images/icecream.png",
+            "correct": false
+          },
+          {
+            "name": "Pizza",
+            "emoji": "🍕",
+            "image": "images/pizza.png",
+            "correct": false
+          }
+        ],
+        "correct": 0,
+        "explanation": "Carrots are packed with beta-carotene, which your body turns into Vitamin A. Vitamin A keeps your eyes healthy and helps you see in low light."
+      },
+      {
+        "type": "reason",
+        "question": "Why do carrots help with night blindness?",
+        "options": [
+          "They contain beta-carotene which becomes Vitamin A in the body",
+          "They make your eyes turn orange",
+          "They have calcium for strong teeth",
+          "They taste sweet so they give energy"
+        ],
+        "correct": 0,
+        "explanation": "Carrots contain beta-carotene, a pigment that the body converts into Vitamin A. Vitamin A is essential for making rhodopsin, the eye pigment needed for night vision."
+      },
+      {
+        "type": "prevent",
+        "question": "How can you prevent night blindness?",
+        "options": [
+          "Eat Vitamin A rich foods like carrots, sweet potato, and leafy greens",
+          "Wear sunglasses at all times",
+          "Avoid looking at lights",
+          "Eat more sweets and chocolates"
+        ],
+        "correct": 0,
+        "explanation": "Eating Vitamin A rich foods every day keeps your eyes healthy. Good sources include carrots, sweet potato, mango, and dark leafy vegetables."
+      },
+      {
+        "type": "concept",
+        "question": "Which part of the eye is responsible for seeing in dim light?",
+        "options": [
+          "Rod cells in the retina",
+          "Cone cells in the cornea",
+          "The lens of the eye",
+          "The iris of the eye"
+        ],
+        "correct": 0,
+        "explanation": "Rod cells are special light-sensitive cells in the retina. They need Vitamin A to work properly and help us see in low light conditions."
+      }
+    ]
+  },
+  {
+    "id": "bones",
+    "name": "Bones",
+    "icon": "🦴",
+    "disease": "Rickets",
+    "nutrient": "Vitamin D",
+    "color": "#bdc3c7",
+    "description": "Without enough Vitamin D, bones become soft and weak, causing pain and deformity in children.",
+    "symptoms": [
+      "bones hurt when walking",
+      "legs look slightly bent",
+      "feels weak and tired"
+    ],
+    "steps": [
+      {
+        "type": "identify",
+        "question": "Rohan's legs hurt when he walks and his bones feel soft. Which vitamin is he missing?",
+        "options": [
+          "Vitamin D",
+          "Vitamin C",
+          "Vitamin B12",
+          "Vitamin A"
+        ],
+        "correct": 0,
+        "explanation": "Vitamin D helps the body absorb calcium from food. Without Vitamin D, bones do not get enough calcium and become soft — this is called Rickets."
+      },
+      {
+        "type": "food",
+        "question": "Which food will give Rohan Vitamin D to strengthen his bones?",
+        "options": [
+          {
+            "name": "Milk",
+            "emoji": "🥛",
+            "image": "images/milk.png",
+            "correct": true
+          },
+          {
+            "name": "Fried Chicken",
+            "emoji": "🍗",
+            "image": "images/friedchicken.png",
+            "correct": false
+          },
+          {
+            "name": "Chocolate Bar",
+            "emoji": "🍫",
+            "image": "images/chocolate.png",
+            "correct": false
+          },
+          {
+            "name": "Crisps",
+            "emoji": "🍿",
+            "image": "images/crisps.png",
+            "correct": false
+          }
+        ],
+        "correct": 0,
+        "explanation": "Milk is fortified with Vitamin D and also contains calcium. Together they make bones strong and healthy."
+      },
+      {
+        "type": "reason",
+        "question": "Why does drinking milk help prevent Rickets?",
+        "options": [
+          "Milk has Vitamin D and calcium which work together to build strong bones",
+          "Milk makes you taller faster",
+          "Milk contains iron for healthy blood",
+          "Milk has sugar that gives you energy"
+        ],
+        "correct": 0,
+        "explanation": "Milk provides both Vitamin D and calcium. Vitamin D helps the intestines absorb calcium, and calcium is the main mineral that makes bones hard and strong."
+      },
+      {
+        "type": "prevent",
+        "question": "What is the best way to prevent Rickets in children?",
+        "options": [
+          "Drink milk, eat fish, and spend some time in sunlight every day",
+          "Eat lots of sugar and sweets",
+          "Stay indoors and rest all day",
+          "Drink cold drinks instead of milk"
+        ],
+        "correct": 0,
+        "explanation": "Sunlight helps your skin make Vitamin D naturally. Eating dairy, fish, and eggs also provides Vitamin D. All of these together keep bones strong."
+      },
+      {
+        "type": "concept",
+        "question": "Which mineral makes up most of the hard structure of bones?",
+        "options": [
+          "Calcium",
+          "Iron",
+          "Sodium",
+          "Potassium"
+        ],
+        "correct": 0,
+        "explanation": "Calcium is the most important mineral in bones. It is stored in bones and gives them their hardness and strength. Vitamin D helps the body absorb calcium from food."
+      }
+    ]
+  },
+  {
+    "id": "lungs",
+    "name": "Lungs",
+    "icon": "🫁",
+    "disease": "Breathing Issues",
+    "nutrient": "Vitamin C",
+    "color": "#3498db",
+    "description": "Low Vitamin C weakens the lungs and makes it harder to breathe during exercise or illness.",
+    "symptoms": [
+      "gets out of breath quickly",
+      "gets colds and infections often",
+      "chest feels tight sometimes"
+    ],
+    "steps": [
+      {
+        "type": "identify",
+        "question": "Rohan gets out of breath easily and catches colds very often. Which vitamin is he missing?",
+        "options": [
+          "Vitamin C",
+          "Vitamin D",
+          "Vitamin K",
+          "Vitamin B1"
+        ],
+        "correct": 0,
+        "explanation": "Vitamin C is a powerful antioxidant that protects the lungs, strengthens the immune system, and helps the body fight infections."
+      },
+      {
+        "type": "food",
+        "question": "Which food will give Rohan Vitamin C to help his lungs and immune system?",
+        "options": [
+          {
+            "name": "Orange",
+            "emoji": "🍊",
+            "image": "images/orange.png",
+            "correct": true
+          },
+          {
+            "name": "White Bread",
+            "emoji": "🍞",
+            "image": "images/bread.png",
+            "correct": false
+          },
+          {
+            "name": "Butter",
+            "emoji": "🧈",
+            "image": "images/butter.png",
+            "correct": false
+          },
+          {
+            "name": "Noodles",
+            "emoji": "🍜",
+            "image": "images/noodles.png",
+            "correct": false
+          }
+        ],
+        "correct": 0,
+        "explanation": "Oranges are one of the richest sources of Vitamin C. Eating one orange a day can boost your immune system and protect your lungs."
+      },
+      {
+        "type": "reason",
+        "question": "Why do oranges help keep your lungs healthy?",
+        "options": [
+          "Oranges have Vitamin C which acts as an antioxidant protecting lung tissue",
+          "Oranges are yellow and make you happy",
+          "Oranges have iron to boost energy",
+          "Oranges contain fat which coats the lungs"
+        ],
+        "correct": 0,
+        "explanation": "Vitamin C in oranges is an antioxidant that protects lung cells from damage. It also helps the body fight infections and reduces inflammation in the airways."
+      },
+      {
+        "type": "prevent",
+        "question": "How can you keep your lungs healthy and prevent breathing problems?",
+        "options": [
+          "Eat Vitamin C rich fruits, exercise regularly, and avoid smoke",
+          "Stay in bed and avoid all physical activity",
+          "Eat more oily and fatty snacks",
+          "Breathe through your mouth only"
+        ],
+        "correct": 0,
+        "explanation": "A combination of Vitamin C rich foods (like citrus fruits, amla, guava), regular exercise, and clean air keeps the lungs strong and healthy."
+      },
+      {
+        "type": "concept",
+        "question": "What happens in the lungs when we breathe in?",
+        "options": [
+          "Oxygen enters the blood and carbon dioxide leaves the body",
+          "Food gets digested and turned into energy",
+          "Blood cells are made from the air",
+          "Calcium is absorbed to strengthen bones"
+        ],
+        "correct": 0,
+        "explanation": "The lungs are responsible for gas exchange. When we breathe in, oxygen passes into the blood through tiny air sacs called alveoli. When we breathe out, carbon dioxide (a waste gas) leaves the body."
+      }
+    ]
+  },
+  {
+    "id": "stomach",
+    "name": "Stomach",
+    "icon": "🫃",
+    "disease": "Indigestion",
+    "nutrient": "Fiber",
+    "color": "#8e44ad",
+    "description": "Without enough dietary fiber, digestion slows down, causing stomach pain, bloating, and discomfort.",
+    "symptoms": [
+      "stomach hurts after eating",
+      "feels bloated and heavy",
+      "bowel movements are irregular"
+    ],
+    "steps": [
+      {
+        "type": "identify",
+        "question": "Rohan's stomach hurts after meals and he feels bloated. What is missing from his diet?",
+        "options": [
+          "Dietary Fiber",
+          "Vitamin A",
+          "Protein",
+          "Fat"
+        ],
+        "correct": 0,
+        "explanation": "Dietary fiber helps food move through the digestive system smoothly. Without enough fiber, digestion becomes slow and the stomach feels uncomfortable."
+      },
+      {
+        "type": "food",
+        "question": "Which food will give Rohan the fiber he needs for good digestion?",
+        "options": [
+          {
+            "name": "Oats",
+            "emoji": "🌾",
+            "image": "images/oats.png",
+            "correct": true
+          },
+          {
+            "name": "White Rice",
+            "emoji": "🍚",
+            "image": "images/rice.png",
+            "correct": false
+          },
+          {
+            "name": "Soft Drink",
+            "emoji": "🧃",
+            "image": "images/softdrink.png",
+            "correct": false
+          },
+          {
+            "name": "Cake",
+            "emoji": "🎂",
+            "image": "images/cake.png",
+            "correct": false
+          }
+        ],
+        "correct": 0,
+        "explanation": "Oats are an excellent source of soluble fiber. Fiber helps food move through the intestines and keeps your digestion working well."
+      },
+      {
+        "type": "reason",
+        "question": "Why do oats help with indigestion and stomach problems?",
+        "options": [
+          "Oats have lots of fiber that helps food move through the digestive tract",
+          "Oats are soft so they are easy to eat",
+          "Oats have Vitamin C which kills stomach bacteria",
+          "Oats have sugar which gives fast energy"
+        ],
+        "correct": 0,
+        "explanation": "Oats contain both soluble and insoluble fiber. Soluble fiber forms a gel-like substance that slows digestion in a good way, while insoluble fiber adds bulk to help food move through the intestines."
+      },
+      {
+        "type": "prevent",
+        "question": "What is the best way to prevent indigestion and keep your stomach healthy?",
+        "options": [
+          "Eat lots of fruits, vegetables, and whole grains every day and drink plenty of water",
+          "Eat fast food and fried snacks every meal",
+          "Skip meals to give your stomach a rest",
+          "Drink more soda to help with digestion"
+        ],
+        "correct": 0,
+        "explanation": "Eating fiber-rich foods like fruits, vegetables, legumes, and whole grains, along with drinking plenty of water, keeps the digestive system healthy and prevents indigestion."
+      },
+      {
+        "type": "concept",
+        "question": "Where does most chemical digestion of food happen in the human body?",
+        "options": [
+          "In the small intestine",
+          "In the mouth",
+          "In the large intestine",
+          "In the liver"
+        ],
+        "correct": 0,
+        "explanation": "Most chemical digestion and nutrient absorption happens in the small intestine. Digestive enzymes from the pancreas and bile from the liver break down food into small molecules that are absorbed into the blood."
+      }
+    ]
+  },
+  {
+    "id": "brain",
+    "name": "Brain",
+    "icon": "🧠",
+    "disease": "Lack of Concentration",
+    "nutrient": "Omega-3",
+    "color": "#e67e22",
+    "description": "The brain needs Omega-3 fatty acids to build nerve connections and focus properly.",
+    "symptoms": [
+      "finds it hard to focus or study",
+      "forgets things easily",
+      "feels mentally tired quickly"
+    ],
+    "steps": [
+      {
+        "type": "identify",
+        "question": "Rohan cannot focus in school and forgets things easily. Which nutrient does his brain need?",
+        "options": [
+          "Omega-3 Fatty Acids",
+          "Iron",
+          "Vitamin D",
+          "Calcium"
+        ],
+        "correct": 0,
+        "explanation": "Omega-3 fatty acids are essential for brain health. They help build the membranes around brain cells and support communication between neurons, which improves focus and memory."
+      },
+      {
+        "type": "food",
+        "question": "Which food is the best source of Omega-3 to help Rohan's brain?",
+        "options": [
+          {
+            "name": "Walnuts",
+            "emoji": "🥜",
+            "image": "images/walnuts.png",
+            "correct": true
+          },
+          {
+            "name": "French Fries",
+            "emoji": "🍟",
+            "image": "images/fries.png",
+            "correct": false
+          },
+          {
+            "name": "Cookies",
+            "emoji": "🍪",
+            "image": "images/cookies.png",
+            "correct": false
+          },
+          {
+            "name": "Candy Floss",
+            "emoji": "🍭",
+            "image": "images/candyfloss.png",
+            "correct": false
+          }
+        ],
+        "correct": 0,
+        "explanation": "Walnuts are one of the best plant sources of Omega-3 fatty acids. They even look like a tiny brain, which is a good reminder to eat them for brain health!"
+      },
+      {
+        "type": "reason",
+        "question": "Why do walnuts help improve concentration and memory?",
+        "options": [
+          "They contain Omega-3 fatty acids that build and repair brain cells",
+          "They are crunchy so they wake you up",
+          "They have Vitamin C for energy",
+          "They contain iron for healthy blood"
+        ],
+        "correct": 0,
+        "explanation": "Walnuts are rich in ALA, a type of Omega-3 fatty acid. Omega-3s are a key building block of the brain and help nerve cells communicate better, improving focus and memory."
+      },
+      {
+        "type": "prevent",
+        "question": "How can you keep your brain sharp and improve concentration?",
+        "options": [
+          "Eat Omega-3 rich foods, sleep well, exercise, and read regularly",
+          "Play video games all night instead of sleeping",
+          "Eat lots of sugary snacks for quick brain energy",
+          "Avoid all physical activity to save brain energy"
+        ],
+        "correct": 0,
+        "explanation": "Eating Omega-3 rich foods like walnuts, flaxseeds, and fish, combined with good sleep, exercise, and mental activities like reading, keeps the brain healthy and focused."
+      },
+      {
+        "type": "concept",
+        "question": "What is the name of the long thread-like part of a nerve cell that carries messages?",
+        "options": [
+          "Axon",
+          "Nucleus",
+          "Dendrite",
+          "Cell membrane"
+        ],
+        "correct": 0,
+        "explanation": "The axon is the long, thread-like part of a neuron (nerve cell) that transmits electrical signals away from the cell body to other neurons or muscles. Omega-3 fatty acids help maintain the myelin sheath that covers and protects axons."
+      }
+    ]
+  },
+  {
+    "id": "skin",
+    "name": "Skin",
+    "icon": "🧴",
+    "disease": "Dermatitis",
+    "nutrient": "Vitamin E",
+    "color": "#e91e8c",
+    "description": "Without enough Vitamin E, skin becomes dry, itchy, and inflamed.",
+    "symptoms": [
+      "skin feels dry and itchy",
+      "has red patches on skin",
+      "small rashes appear on arms or face"
+    ],
+    "steps": [
+      {
+        "type": "identify",
+        "question": "Rohan's skin is dry, itchy, and has red patches. Which vitamin is he missing?",
+        "options": [
+          "Vitamin E",
+          "Vitamin A",
+          "Vitamin B12",
+          "Vitamin K"
+        ],
+        "correct": 0,
+        "explanation": "Vitamin E is an antioxidant that protects skin cells from damage. Without it, skin becomes dry, inflamed, and prone to irritation."
+      },
+      {
+        "type": "food",
+        "question": "Which food will give Rohan Vitamin E to heal his skin?",
+        "options": [
+          {
+            "name": "Almonds",
+            "emoji": "🌰",
+            "image": "images/almonds.png",
+            "correct": true
+          },
+          {
+            "name": "Samosa",
+            "emoji": "🥟",
+            "image": "images/samosa.png",
+            "correct": false
+          },
+          {
+            "name": "Lollipop",
+            "emoji": "🍭",
+            "image": "images/lollipop.png",
+            "correct": false
+          },
+          {
+            "name": "Instant Noodles",
+            "emoji": "🍜",
+            "image": "images/instantnoodles.png",
+            "correct": false
+          }
+        ],
+        "correct": 0,
+        "explanation": "Almonds are one of the richest sources of Vitamin E. Just a small handful provides a good amount of this skin-protecting vitamin."
+      },
+      {
+        "type": "reason",
+        "question": "How do almonds help someone with dry, itchy skin?",
+        "options": [
+          "Almonds are rich in Vitamin E which protects and moisturizes skin cells",
+          "Almonds are hard and scratching with them relieves the itch",
+          "Almonds contain calcium which makes skin firm",
+          "Almonds have iron which makes skin look red and healthy"
+        ],
+        "correct": 0,
+        "explanation": "Vitamin E in almonds is a powerful antioxidant that protects skin cell membranes from damage. It also helps the skin retain moisture and reduces inflammation."
+      },
+      {
+        "type": "prevent",
+        "question": "How can you keep your skin healthy and prevent dermatitis?",
+        "options": [
+          "Eat Vitamin E rich foods, drink plenty of water, and protect skin from harsh sun",
+          "Apply cooking oil directly to the skin every day",
+          "Eat lots of fried and junk food for oily skin",
+          "Avoid bathing to keep skin's natural oils"
+        ],
+        "correct": 0,
+        "explanation": "Eating foods rich in Vitamin E (almonds, sunflower seeds, spinach), staying hydrated, and protecting skin from sun damage all help maintain healthy, smooth skin."
+      },
+      {
+        "type": "concept",
+        "question": "What is the outermost layer of the skin called?",
+        "options": [
+          "Epidermis",
+          "Dermis",
+          "Hypodermis",
+          "Cortex"
+        ],
+        "correct": 0,
+        "explanation": "The epidermis is the outermost layer of the skin. It acts as a protective barrier against the environment and is the layer most affected by Vitamin E deficiency and dermatitis."
+      }
+    ]
+  },
+  {
+    "id": "heart",
+    "name": "Heart",
+    "icon": "❤️",
+    "disease": "Poor Cardiovascular Health",
+    "nutrient": "Potassium",
+    "color": "#e74c3c",
+    "description": "Low potassium can cause irregular heartbeat and weaken the heart muscles over time.",
+    "symptoms": [
+      "feels tired quickly during activity",
+      "sometimes feels heart beating irregularly",
+      "has high blood pressure"
+    ],
+    "steps": [
+      {
+        "type": "identify",
+        "question": "Rohan's heart sometimes beats irregularly and he tires quickly. Which mineral is he missing?",
+        "options": [
+          "Potassium",
+          "Calcium",
+          "Sodium",
+          "Magnesium"
+        ],
+        "correct": 0,
+        "explanation": "Potassium is essential for healthy heart muscle function. It helps regulate the heartbeat and keeps blood pressure at a healthy level."
+      },
+      {
+        "type": "food",
+        "question": "Which food is the best source of potassium for a healthy heart?",
+        "options": [
+          {
+            "name": "Banana",
+            "emoji": "🍌",
+            "image": "images/banana.png",
+            "correct": true
+          },
+          {
+            "name": "Fried Fish",
+            "emoji": "🐟",
+            "image": "images/friedfish.png",
+            "correct": false
+          },
+          {
+            "name": "White Bread",
+            "emoji": "🍞",
+            "image": "images/whitebread.png",
+            "correct": false
+          },
+          {
+            "name": "Soft Drink",
+            "emoji": "🥤",
+            "image": "images/softdrink2.png",
+            "correct": false
+          }
+        ],
+        "correct": 0,
+        "explanation": "Bananas are famous for being high in potassium. They help keep the heart beating regularly and blood pressure in check."
+      },
+      {
+        "type": "reason",
+        "question": "Why do bananas help keep the heart healthy?",
+        "options": [
+          "They are rich in potassium which regulates heartbeat and blood pressure",
+          "They are sweet which gives the heart energy to pump",
+          "They contain Vitamin D which strengthens heart muscle",
+          "They have fiber which cleans the blood"
+        ],
+        "correct": 0,
+        "explanation": "Potassium in bananas helps control the electrical signals that make the heart beat. It also balances sodium levels, which helps keep blood pressure normal and reduces strain on the heart."
+      },
+      {
+        "type": "prevent",
+        "question": "How can you keep your heart healthy and prevent cardiovascular problems?",
+        "options": [
+          "Eat potassium-rich fruits and vegetables, exercise regularly, and avoid too much salt",
+          "Eat salty snacks and fried food every day",
+          "Avoid all exercise to protect the heart",
+          "Drink lots of energy drinks for a strong heartbeat"
+        ],
+        "correct": 0,
+        "explanation": "Regular exercise strengthens the heart muscle. Eating potassium-rich foods (bananas, sweet potato, tomatoes) and reducing salt intake helps maintain healthy blood pressure and protects the heart."
+      },
+      {
+        "type": "concept",
+        "question": "How many chambers does the human heart have?",
+        "options": [
+          "4 chambers (2 atria and 2 ventricles)",
+          "2 chambers (1 atrium and 1 ventricle)",
+          "3 chambers (1 atrium and 2 ventricles)",
+          "6 chambers (3 atria and 3 ventricles)"
+        ],
+        "correct": 0,
+        "explanation": "The human heart has 4 chambers: the right atrium and right ventricle (which pump blood to the lungs) and the left atrium and left ventricle (which pump blood to the rest of the body)."
+      }
+    ]
+  },
+  {
+    "id": "small_intestine",
+    "name": "Small Intestine",
+    "icon": "🌀",
+    "disease": "Malabsorption Syndrome",
+    "nutrient": "Zinc",
+    "color": "#27ae60",
+    "description": "Without enough zinc, the small intestine cannot properly absorb nutrients from food.",
+    "symptoms": [
+      "feels weak even after eating well",
+      "gets diarrhea often",
+      "grows and heals slowly"
+    ],
+    "steps": [
+      {
+        "type": "identify",
+        "question": "Rohan eats well but still feels weak and gets sick often. Which mineral is his small intestine missing?",
+        "options": [
+          "Zinc",
+          "Iron",
+          "Calcium",
+          "Sodium"
+        ],
+        "correct": 0,
+        "explanation": "Zinc is needed for the small intestine to absorb nutrients properly. It also helps the immune system and speeds up healing of wounds."
+      },
+      {
+        "type": "food",
+        "question": "Which food will give Rohan the zinc he needs?",
+        "options": [
+          {
+            "name": "Pumpkin Seeds",
+            "emoji": "🎃",
+            "image": "images/pumpkinseeds.png",
+            "correct": true
+          },
+          {
+            "name": "White Sugar",
+            "emoji": "🍚",
+            "image": "images/sugar.png",
+            "correct": false
+          },
+          {
+            "name": "Butter Cookies",
+            "emoji": "🍪",
+            "image": "images/buttercookies.png",
+            "correct": false
+          },
+          {
+            "name": "Popcorn",
+            "emoji": "🍿",
+            "image": "images/popcorn.png",
+            "correct": false
+          }
+        ],
+        "correct": 0,
+        "explanation": "Pumpkin seeds are an excellent plant-based source of zinc. They are easy to eat as a snack and provide a good amount of this important mineral."
+      },
+      {
+        "type": "reason",
+        "question": "Why do pumpkin seeds help with malabsorption syndrome?",
+        "options": [
+          "They contain zinc which helps the intestine absorb nutrients and supports immunity",
+          "They are crunchy and help clean the intestines like a brush",
+          "They have calcium which strengthens the intestine walls",
+          "They have Vitamin A which improves eyesight"
+        ],
+        "correct": 0,
+        "explanation": "Zinc in pumpkin seeds is essential for healthy gut function. It helps the cells in the small intestine work properly so that nutrients from food can be absorbed into the body."
+      },
+      {
+        "type": "prevent",
+        "question": "How can you prevent malabsorption and keep your small intestine healthy?",
+        "options": [
+          "Eat a balanced diet with zinc-rich foods, avoid junk food, and drink clean water",
+          "Eat only one big meal a day",
+          "Drink lots of soft drinks with meals",
+          "Avoid legumes and nuts completely"
+        ],
+        "correct": 0,
+        "explanation": "A balanced diet including zinc-rich foods (seeds, legumes, nuts), clean drinking water, and avoiding processed junk food helps the small intestine stay healthy and absorb nutrients properly."
+      },
+      {
+        "type": "concept",
+        "question": "What are the tiny finger-like projections in the small intestine that help absorb nutrients?",
+        "options": [
+          "Villi",
+          "Cilia",
+          "Nephrons",
+          "Alveoli"
+        ],
+        "correct": 0,
+        "explanation": "Villi are tiny finger-like projections that cover the inner wall of the small intestine. They increase the surface area of the intestine, helping it absorb as many nutrients as possible from digested food."
+      }
+    ]
+  },
+  {
+    "id": "large_intestine",
+    "name": "Large Intestine",
+    "icon": "🔄",
+    "disease": "Constipation",
+    "nutrient": "Dietary Fiber",
+    "color": "#16a085",
+    "description": "Without enough dietary fiber, the large intestine moves waste too slowly, causing constipation.",
+    "symptoms": [
+      "cannot go to the bathroom easily",
+      "stomach feels hard and bloated",
+      "stomach cramps and discomfort"
+    ],
+    "steps": [
+      {
+        "type": "identify",
+        "question": "Rohan's stomach is hard and he has trouble going to the bathroom. What is missing from his diet?",
+        "options": [
+          "Dietary Fiber",
+          "Vitamin C",
+          "Protein",
+          "Fat"
+        ],
+        "correct": 0,
+        "explanation": "Dietary fiber adds bulk to waste and helps the large intestine move it along. Without fiber, waste moves too slowly and becomes hard, causing constipation."
+      },
+      {
+        "type": "food",
+        "question": "Which food will give Rohan the fiber he needs to prevent constipation?",
+        "options": [
+          {
+            "name": "Whole Wheat Bread",
+            "emoji": "🍞",
+            "image": "images/wheatbread.png",
+            "correct": true
+          },
+          {
+            "name": "White Rice",
+            "emoji": "🍚",
+            "image": "images/whiterice.png",
+            "correct": false
+          },
+          {
+            "name": "Cheese",
+            "emoji": "🧀",
+            "image": "images/cheese.png",
+            "correct": false
+          },
+          {
+            "name": "Sweets",
+            "emoji": "🍬",
+            "image": "images/sweets.png",
+            "correct": false
+          }
+        ],
+        "correct": 0,
+        "explanation": "Whole wheat bread is rich in insoluble fiber which adds bulk to stools and helps them move through the large intestine more easily."
+      },
+      {
+        "type": "reason",
+        "question": "Why does whole wheat bread help prevent constipation?",
+        "options": [
+          "It has insoluble fiber that adds bulk to waste and speeds up movement through the intestine",
+          "It is soft and easy to digest so it does not stress the intestine",
+          "It has Vitamin D which strengthens the intestine walls",
+          "It has iron which cleans the intestine"
+        ],
+        "correct": 0,
+        "explanation": "Whole wheat bread contains insoluble fiber, which does not dissolve in water. Instead, it adds bulk and roughage to the waste in your large intestine, helping it move through more quickly and easily."
+      },
+      {
+        "type": "prevent",
+        "question": "What is the best way to prevent constipation?",
+        "options": [
+          "Eat plenty of fiber-rich foods, drink 8 glasses of water daily, and exercise regularly",
+          "Eat lots of cheese and dairy products every day",
+          "Drink less water so the intestines do not have too much liquid",
+          "Avoid fruits and vegetables and eat only cooked rice"
+        ],
+        "correct": 0,
+        "explanation": "Fiber-rich foods (whole grains, fruits, vegetables, legumes), drinking enough water, and physical activity all work together to keep the large intestine healthy and prevent constipation."
+      },
+      {
+        "type": "concept",
+        "question": "What is the main job of the large intestine?",
+        "options": [
+          "Absorbs water from undigested food and forms solid waste",
+          "Digests proteins from the food we eat",
+          "Produces digestive enzymes to break down food",
+          "Absorbs vitamins and minerals from digested food"
+        ],
+        "correct": 0,
+        "explanation": "The main job of the large intestine is to absorb water and salts from the material that was not digested in the small intestine. It then forms this remaining material into solid waste (feces) which is stored until it leaves the body."
+      }
+    ]
+  }
+]

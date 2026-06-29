@@ -1,0 +1,110 @@
+{
+  "sides": {
+    "left": {
+      "iconLeft": 8.5,
+      "bendX": 30,
+      "mobileIconLeft": 13,
+      "mobileBendX": 31
+    },
+    "right": {
+      "iconLeft": 91.5,
+      "bendX": 70,
+      "mobileIconLeft": 87,
+      "mobileBendX": 69
+    }
+  },
+  "mobileTop": {
+    "brain": 9,
+    "eyes": 20,
+    "lungs": 34,
+    "stomach": 48,
+    "small_intestine": 62,
+    "skin": 9,
+    "blood": 20,
+    "heart": 34,
+    "large_intestine": 50,
+    "bones": 64
+  },
+  "hotspots": {
+    "brain": {
+      "side": "left",
+      "iconTop": 9,
+      "anchorTop": 8,
+      "anchorLeft": 50,
+      "bendX": 20,
+      "mobileBendX": 24
+    },
+    "eyes": {
+      "side": "left",
+      "iconTop": 22,
+      "anchorTop": 14,
+      "anchorLeft": 50,
+      "bendX": 24,
+      "mobileBendX": 27
+    },
+    "lungs": {
+      "side": "left",
+      "iconTop": 36,
+      "anchorTop": 30,
+      "anchorLeft": 48,
+      "bendX": 28,
+      "mobileBendX": 30
+    },
+    "stomach": {
+      "side": "left",
+      "iconTop": 50,
+      "anchorTop": 37,
+      "anchorLeft": 52,
+      "bendX": 32,
+      "mobileBendX": 33
+    },
+    "small_intestine": {
+      "side": "left",
+      "iconTop": 64,
+      "anchorTop": 43,
+      "anchorLeft": 50,
+      "bendX": 36,
+      "mobileBendX": 36
+    },
+    "skin": {
+      "side": "right",
+      "iconTop": 9,
+      "anchorTop": 18,
+      "anchorLeft": 54,
+      "bendX": 80,
+      "mobileBendX": 76
+    },
+    "blood": {
+      "side": "right",
+      "iconTop": 22,
+      "anchorTop": 28,
+      "anchorLeft": 57,
+      "bendX": 77,
+      "mobileBendX": 73
+    },
+    "heart": {
+      "side": "right",
+      "iconTop": 36,
+      "anchorTop": 30,
+      "anchorLeft": 52,
+      "bendX": 74,
+      "mobileBendX": 71
+    },
+    "large_intestine": {
+      "side": "right",
+      "iconTop": 50,
+      "anchorTop": 48,
+      "anchorLeft": 53,
+      "bendX": 71,
+      "mobileBendX": 69
+    },
+    "bones": {
+      "side": "right",
+      "iconTop": 64,
+      "anchorTop": 70,
+      "anchorLeft": 44,
+      "bendX": 68,
+      "mobileBendX": 66
+    }
+  }
+}

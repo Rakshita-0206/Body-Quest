@@ -1,0 +1,158 @@
+{
+  "1": [
+    {
+      "question": "Which nutrient deficiency causes Anemia (low red blood cells)?",
+      "options": [
+        "Iron",
+        "Vitamin C",
+        "Calcium",
+        "Vitamin D"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Which vitamin is needed for the eyes to see well in dim light?",
+      "options": [
+        "Vitamin A",
+        "Vitamin B",
+        "Vitamin E",
+        "Vitamin K"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Rickets is a disease that affects which part of the body?",
+      "options": [
+        "Bones",
+        "Eyes",
+        "Blood",
+        "Stomach"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Which fruit is best known for being rich in Vitamin C?",
+      "options": [
+        "Orange",
+        "Mango",
+        "Apple",
+        "Grapes"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Which food type helps your stomach digest food properly and prevents constipation?",
+      "options": [
+        "Fiber",
+        "Sugar",
+        "Salt",
+        "Fat"
+      ],
+      "correct": 0
+    }
+  ],
+  "2": [
+    {
+      "question": "Which fatty acid helps the brain focus and improves memory?",
+      "options": [
+        "Omega-3",
+        "Omega-6",
+        "Trans fat",
+        "Saturated fat"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Which vitamin protects skin from dryness and inflammation?",
+      "options": [
+        "Vitamin E",
+        "Vitamin A",
+        "Vitamin C",
+        "Vitamin B12"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Which mineral is important for keeping the heartbeat regular?",
+      "options": [
+        "Potassium",
+        "Sodium",
+        "Calcium",
+        "Iron"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "What are the tiny finger-like parts of the small intestine that absorb nutrients?",
+      "options": [
+        "Villi",
+        "Alveoli",
+        "Nephrons",
+        "Cilia"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "What does the large intestine mainly absorb from undigested food?",
+      "options": [
+        "Water",
+        "Protein",
+        "Carbohydrates",
+        "Vitamins"
+      ],
+      "correct": 0
+    }
+  ],
+  "3": [
+    {
+      "question": "Hemoglobin is found in which type of blood cell and carries which gas?",
+      "options": [
+        "Red blood cells; oxygen",
+        "White blood cells; carbon dioxide",
+        "Platelets; nitrogen",
+        "Plasma; water"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Vitamin D is special because the human body can make it naturally using what?",
+      "options": [
+        "Sunlight",
+        "Exercise",
+        "Sleep",
+        "Cold water"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "The human heart has how many chambers and what do they do?",
+      "options": [
+        "4 chambers — pump blood to lungs and body",
+        "2 chambers — store blood",
+        "3 chambers — filter waste from blood",
+        "6 chambers — produce red blood cells"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Which organ produces enzymes that help digest food in the small intestine?",
+      "options": [
+        "Pancreas",
+        "Liver",
+        "Kidney",
+        "Stomach"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Which deficiency causes both dry skin and poor night vision?",
+      "options": [
+        "Vitamin A",
+        "Vitamin C",
+        "Iron",
+        "Zinc"
+      ],
+      "correct": 0
+    }
+  ]
+}
