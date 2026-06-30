@@ -99,7 +99,10 @@ html.is-mobile-vp #screen-patient.level-1-play .ps-right {
     min-height: 0;
     padding: 0 6px 0;
     gap: 0;
-    overflow: hidden;
+    /* overflow: visible (not hidden) so that ps-center's overflow-y: auto
+       actually works. overflow:hidden on a parent silently kills both
+       scroll AND position:sticky on all descendant elements. */
+    overflow: visible;
   }
 
   #screen-patient.level-1-play.level-1-mobile .ps-center {
@@ -110,13 +113,22 @@ html.is-mobile-vp #screen-patient.level-1-play .ps-right {
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    overflow: hidden;
+    /* overflow-y: auto makes the ENTIRE content area scrollable.
+       This is the definitive fix: no matter how tall the clue is
+       or how many organs there are, the user can always scroll down
+       to reach every organ button. Nothing is ever hidden behind
+       the fixed chrome. */
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
     position: relative;
+    /* Reserve space at the bottom so the last organ row clears
+       the fixed chrome bar (streak/score/progress). */
     padding-bottom: var(--l1-mobile-chrome-h);
   }
 
   #screen-patient.level-1-play.level-1-mobile .ps-body-wrap {
-    flex: 1;
+    flex: 1 0 auto;
     min-height: 0;
     width: 100%;
     max-width: 100%;
@@ -124,11 +136,23 @@ html.is-mobile-vp #screen-patient.level-1-play .ps-right {
     box-sizing: border-box;
     position: relative;
     z-index: 1;
+    /* Make this a flex column so #body-map can stretch to fill it.
+       The body-map JS reads map.clientHeight to place organ buttons —
+       if #body-map doesn’t fill the container, organs cluster at top
+       and leave a large blank area below. */
+    display: flex;
+    flex-direction: column;
   }
 
   #screen-patient.level-1-play.level-1-mobile #body-map {
     padding: 0 4px;
     --l1-mobile-wrap-shift: 27;
+    /* Stretch to fill the full available height in ps-body-wrap.
+       This gives the body-map JS the correct clientHeight to measure,
+       so organ buttons are spread across the whole area — not just
+       the top portion — eliminating the empty space at the bottom. */
+    flex: 1;
+    min-height: 0;
   }
 
   #screen-patient.level-1-play.level-1-mobile .ps-body-hint {
@@ -143,31 +167,25 @@ html.is-mobile-vp #screen-patient.level-1-play .ps-right {
   #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
     flex-shrink: 0;
     width: 100%;
     padding: 0 6px 4px;
     margin-top: 0;
     margin-bottom: 0;
     box-sizing: border-box;
+    /* position:relative (not sticky) — sticky cannot work when
+       any ancestor has overflow:hidden, which #screen-patient does. */
     position: relative;
     z-index: 12;
-    max-height: min(42dvh, 320px);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
+    background: #060e1c;
   }
 
+  /* Hide the patient card row in question-above on mobile.
+     It takes ~52px and is redundant — the clue label already provides
+     context. Removing it means 3-4 line clues fit without overflow. */
   #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above .ps-patient-card {
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 10px;
-    margin: 0;
-    flex-shrink: 0;
-    border-color: rgba(77, 255, 181, 0.35);
-    background: linear-gradient(160deg, rgba(8, 28, 24, 0.95), rgba(6, 16, 28, 0.98));
-    box-shadow: 0 0 16px rgba(77, 255, 181, 0.1);
+    display: none !important;
   }
 
   #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above .ps-patient-img {
@@ -200,10 +218,10 @@ html.is-mobile-vp #screen-patient.level-1-play .ps-right {
   }
 
   #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above .level1-symptom-text {
-    font-size: 0.92rem;
-    line-height: 1.45;
-    padding: 10px 12px;
-    margin-bottom: 6px;
+    font-size: 0.83rem;
+    line-height: 1.36;
+    padding: 7px 10px;
+    margin-bottom: 3px;
   }
 
   #screen-patient.level-1-play.level-1-mobile .l1-mobile-question-above .level1-answer-feedback {
