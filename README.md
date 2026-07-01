@@ -49,7 +49,7 @@ The game files are fully integrated within the FastAPI layout under `templates/b
    ```bash
    python main.py
    ```
-4. Open your web browser and navigate to **[http://127.0.0.1:8000/body-quest/](http://127.0.0.1:8000/body-quest/)**.
+4. Open your web browser and navigate to **[[http://127.0.0.1:8000/body-quest/](http://127.0.0.1:8000/body-quest/)](https://www.utmt.org/body-quest/)**.
 
 > [!WARNING]
 > Do **NOT** attempt to open `index.html` directly or run a local Python HTTP server (`python -m http.server`) inside the templates directory. The frontend requires the FastAPI URL routing context (`/body-quest/`) to resolve asset URLs and backend endpoints properly.
